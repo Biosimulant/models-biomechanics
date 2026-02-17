@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Biomechanics: Heldt2002OrthostaticstressLpcModel1006230113Model'
+description: 'This a model from the article: Computational modeling of cardiovascular
+  response to orthostatic stress. Heldt T, Shim EB, Kamm RD, Mark RG. J Appl Physiol
+  2002 Mar;92(3):1239-54 11842064 , Abstract: T'
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Thomas Heldt
+- Eun B Shim
+- Roger D Kamm
+- Roger G Mark
+upstream:
+  id: biomodels_ebi:MODEL1006230113
+  source_db: biomodels_ebi
+  source_id: MODEL1006230113
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230113
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230113?filename=MODEL1006230113_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.heldt2002_orthostaticstress_lpc_model1006230113_model:Heldt2002OrthostaticstressLpcModel1006230113Model
+  init_kwargs:
+    model_path: data/MODEL1006230113.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

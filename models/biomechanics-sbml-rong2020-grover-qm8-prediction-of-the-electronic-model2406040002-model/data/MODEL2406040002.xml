@@ -1,0 +1,26 @@
+Entity,Qualifiers,Preferred Ontologies,Value,Comments,DOME
+Model,bqbiol:hasProperty,Chemical Methods Ontology CHMO,http://purl.obolibrary.org/obo/CHMO_0000811,electronic spectra,
+Model,bqbiol:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C70662,excited state energy,
+Model,bqbiol:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C16867,electronic properties,
+Model,bqbiol:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C19650,Quantum Mechanics,
+Model,bqbiol:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C45329,Active,
+Model,bqbiol:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C154407,Inactive,
+Model,bqbiol:hasProperty,Bioinformatics Concept EDAM,https://identifiers.org/bptl/edam:topic_0154,Small molecules,
+Model,bqbiol:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C103240,Molecular representation,
+Model,bqbiol:hasProperty,BioAssay Ontology BAO,https://identifiers.org/NCIT:C75915,Structure-property relationship,
+Model,bqbiol:hasProperty,Bioinformatics Concept EDAM,https://identifiers.org/bptl/edam:topic_3336,Drug discovery,
+Model,bqmodel:hasProperty,Bioinformatics Concept EDAM,https://identifiers.org/bptl/edam:topic_3474,Machine learning,
+Model,bqmodel:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C16309,Artificial Intelligence,
+Model,bqmodel:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C176258,Deep Learning,
+Model,bqmodel:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C17429,Graph Neural Networks,Optimization-Algorithm
+Model,bqmodel:hasProperty,Ontology for Biomedical Investigations OBI,https://identifiers.org/OBI:0002588,Self-supervised task,Optimization-Algorithm
+Model,bqmodel:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C53237,Regression Method,Optimization-Algorithm
+Model,bqmodel:hasProperty,STATO: the statistical methods ontology,https://identifiers.org/STATO:0000274,Receiver operational characteristics curve,Evaluation-Performance Measure
+Model,bqmodel:hasProperty,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C71568,Mean Absolute error,Evaluation-Performance Measure
+Model,bqmodel:isDescribedBy,GitHub Repository,https://github.com/tencent-ailab/grover,Grover Source code,Model-Source code
+Model,bqmodel:isDescribedBy,Ersilia Model Hub,https://github.com/ersilia-os/eos3xip,Ersilia Incorporation URL,Model-Executable form
+Model,bqmodel:isDescribedBy,Digital Object Identifier,https://doi.org/10.48550/arXiv.2007.02835,DOI URL,
+Model,bqbiol:hasInput,Chemical information ontology (cheminf),https://identifiers.org/CHEMINF:000018,Smiles descriptors,Data-Input
+Model,bqbiol:hasDataset,Website,https://moleculenet.org/datasets-1,QM8 dataset,Data-Source
+Model,bqbiol:hasOutput,Chemical Methods Ontology CHMO,http://purl.obolibrary.org/obo/CHMO_0000811,electronic spectra,Model-Output; Classification
+Model,bqbiol:hasOutput,NCI Thesaurus OBO Edition NCIT,https://identifiers.org/NCIT:C70662,excited state energy,Model-Output; Classification

@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Biomechanics: Carpenter2024MechanicalControlOfGrowingAndModel2503030002Model'
+description: a computational framework to predict the patterns of cell proliferation
+  in growing epithelial tissues, connecting single-cell behaviors and cell-cell interactions
+  to tissue-level growth. Our model inc
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Logan C Carpenter
+- "Fernanda P\xE9rez-Verdugo"
+- Shiladitya Banerjee
+upstream:
+  id: biomodels_ebi:MODEL2503030002
+  source_db: biomodels_ebi
+  source_id: MODEL2503030002
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL2503030002
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2503030002?filename=CC3D_Scripts.zip
+  license: CC0
+bsim:
+  entrypoint: src.carpenter_2024_mechanical_control_of_growing_and_model2503030002_model:Carpenter2024MechanicalControlOfGrowingAndModel2503030002Model
+  init_kwargs:
+    model_path: data/MODEL2503030002.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

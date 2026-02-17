@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Biomechanics: Russomanno2023ASystemsApproachRevealsSpecieModel2307070002Model'
+description: Simcyp PBPK models developed for mouse to support a systems approach
+  to investigating species differences in hepatic stress response capacity
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Russomanno G
+- Sison-Young R
+- Livoti LA
+- Coghlan H
+- Jenkins RE
+upstream:
+  id: biomodels_ebi:MODEL2307070002
+  source_db: biomodels_ebi
+  source_id: MODEL2307070002
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL2307070002
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2307070002?filename=Mouse
+    APAP-G Workspace.wksz
+  license: CC0
+bsim:
+  entrypoint: src.russomanno2023_a_systems_approach_reveals_specie_model2307070002_model:Russomanno2023ASystemsApproachRevealsSpecieModel2307070002Model
+  init_kwargs:
+    model_path: data/MODEL2307070002.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

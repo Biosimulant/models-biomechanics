@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Biomechanics: Shorten2007SkeletalmusclefatigueModel0912160004Model'
+description: 'This a model from the article: A mathematical model of fatigue in skeletal
+  muscle force contraction. Shorten PR, O''Callaghan P, Davidson JB, Soboleva TK.
+  J Muscle Res Cell Motil 2007;28(6):293-313 180'
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Paul R Shorten
+- Paul O'Callaghan
+- John B Davidson
+- Tanya K Soboleva
+upstream:
+  id: biomodels_ebi:MODEL0912160004
+  source_db: biomodels_ebi
+  source_id: MODEL0912160004
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0912160004
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912160004?filename=MODEL0912160004_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.shorten2007_skeletalmusclefatigue_model0912160004_model:Shorten2007SkeletalmusclefatigueModel0912160004Model
+  init_kwargs:
+    model_path: data/MODEL0912160004.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

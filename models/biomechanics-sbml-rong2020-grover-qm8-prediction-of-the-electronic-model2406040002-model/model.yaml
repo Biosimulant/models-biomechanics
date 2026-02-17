@@ -1,0 +1,41 @@
+schema_version: '2.0'
+title: 'Biomechanics: Rong2020GroverQm8PredictionOfTheElectronicModel2406040002Model'
+description: 'This model has been trained using the GROVER embedding with the QM8
+  dataset from Molecule Net, where the electronic properties have been calculated
+  by multiple quantum mechanic methods. Model Type: Mo'
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Yu Rong
+- Yatao Bian
+- Tingyang Xu
+- Weiyang Xie
+- Ying Wei
+upstream:
+  id: biomodels_ebi:MODEL2406040002
+  source_db: biomodels_ebi
+  source_id: MODEL2406040002
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL2406040002
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2406040002?filename=BioModelsMetadata
+    - eos3xip.csv
+  license: CC0
+bsim:
+  entrypoint: src.rong2020_grover_qm8_prediction_of_the_electronic_model2406040002_model:Rong2020GroverQm8PredictionOfTheElectronicModel2406040002Model
+  init_kwargs:
+    model_path: data/MODEL2406040002.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

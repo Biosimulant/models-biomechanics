@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Biomechanics: Aubry1995MultiCompartmentModelOfFluidPhaseBiomd0000000986Model'
+description: 'Fluid-phase endoeytosis (pinocytosis) kinetics were studied in Dictyostelium
+  discoideum amoebae from the axenic strain Ax-2 that exhibits high rates of fluid-phase
+  endoeytosis when cultured in liquid '
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Laurence Aubry
+- "G\xE9rard Klein"
+- Jean-Louis Martiel
+- Michel Satre
+upstream:
+  id: biomodels_ebi:BIOMD0000000986
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000986
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000986
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000986?filename=Aubry1995.xml
+  license: CC0
+bsim:
+  entrypoint: src.aubry1995_multi_compartment_model_of_fluid_phase_biomd0000000986_model:Aubry1995MultiCompartmentModelOfFluidPhaseBiomd0000000986Model
+  init_kwargs:
+    model_path: data/BIOMD0000000986.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

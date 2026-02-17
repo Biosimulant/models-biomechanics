@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Biomechanics: Erguler2013UnfoldedProteinStressResponseBiomd0000000446Model'
+description: Erguler2013 - Unfolded protein stress response The model investigates
+  the mechanism by which UPR (unfolded protein response) outcome switches between
+  survival and death. This model is described in the
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Kamil Erguler
+- Myrtani Pieri
+- Constantinos Deltas
+upstream:
+  id: biomodels_ebi:BIOMD0000000446
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000446
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000446
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000446?filename=BIOMD0000000446_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.erguler2013_unfolded_protein_stress_response_biomd0000000446_model:Erguler2013UnfoldedProteinStressResponseBiomd0000000446Model
+  init_kwargs:
+    model_path: data/BIOMD0000000446.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

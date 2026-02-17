@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Biomechanics: Koo2013IntegratedShearStressInducedNoProduBiomd0000000468Model'
+description: "Andrew Koo, David Nordsletten, Renato Umeton, Beracah Yankama, Shiva\
+  \ Ayyadurai, Guillermo Garc\xEDa-Carde\xF1a & C. Forbes Dewey. In silico modeling\
+  \ of shear-stress-induced nitric oxide production in endoth"
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Andrew Koo
+- David Nordsletten
+- Renato Umeton
+- Beracah Yankama
+- Shiva Ayyadurai
+upstream:
+  id: biomodels_ebi:BIOMD0000000468
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000468
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000468
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000468?filename=BIOMD0000000468_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.koo2013_integrated_shear_stress_induced_no_produ_biomd0000000468_model:Koo2013IntegratedShearStressInducedNoProduBiomd0000000468Model
+  init_kwargs:
+    model_path: data/BIOMD0000000468.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

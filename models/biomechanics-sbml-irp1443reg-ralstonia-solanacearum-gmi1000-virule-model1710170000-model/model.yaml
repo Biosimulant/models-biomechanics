@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Biomechanics: Irp1443regRalstoniaSolanacearumGmi1000ViruleModel1710170000Model'
+description: We reconstructed the Virulence Regulatory Network (VRN) of R. solanacearum
+  strain GMI1000 by collecting bibliographical information based on genetic and genomic
+  studies, including three transcriptomic
+standard: other
+tags:
+- biomechanics
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- "R\xE9mi Peyraud"
+- Ludovic Cottret
+- Lucas Marmiesse
+- "St\xE9phane Genin"
+upstream:
+  id: biomodels_ebi:MODEL1710170000
+  source_db: biomodels_ebi
+  source_id: MODEL1710170000
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1710170000
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1710170000?filename=MODEL1710170000_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.irp1443reg_ralstonia_solanacearum_gmi1000_virule_model1710170000_model:Irp1443regRalstoniaSolanacearumGmi1000ViruleModel1710170000Model
+  init_kwargs:
+    model_path: data/MODEL1710170000.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state
