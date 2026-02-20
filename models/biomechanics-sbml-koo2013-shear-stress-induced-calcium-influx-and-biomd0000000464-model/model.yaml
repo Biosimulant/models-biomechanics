@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000464
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000464?filename=BIOMD0000000464_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.koo2013_shear_stress_induced_calcium_influx_and_biomd0000000464_model:Koo2013ShearStressInducedCalciumInfluxAndBiomd0000000464Model
   init_kwargs:
     model_path: data/BIOMD0000000464.xml

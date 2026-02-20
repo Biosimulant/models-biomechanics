@@ -25,7 +25,7 @@ upstream:
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2406040002?filename=BioModelsMetadata
     - eos3xip.csv
   license: CC0
-bsim:
+biosim:
   entrypoint: src.rong2020_grover_qm8_prediction_of_the_electronic_model2406040002_model:Rong2020GroverQm8PredictionOfTheElectronicModel2406040002Model
   init_kwargs:
     model_path: data/MODEL2406040002.xml

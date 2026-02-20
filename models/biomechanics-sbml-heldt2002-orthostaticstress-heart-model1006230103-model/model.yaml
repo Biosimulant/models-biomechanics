@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230103
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230103?filename=MODEL1006230103_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.heldt2002_orthostaticstress_heart_model1006230103_model:Heldt2002OrthostaticstressHeartModel1006230103Model
   init_kwargs:
     model_path: data/MODEL1006230103.xml

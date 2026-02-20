@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1710170000
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1710170000?filename=MODEL1710170000_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.irp1443reg_ralstonia_solanacearum_gmi1000_virule_model1710170000_model:Irp1443regRalstoniaSolanacearumGmi1000ViruleModel1710170000Model
   init_kwargs:
     model_path: data/MODEL1710170000.xml

@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000987
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000987?filename=Aubry1995.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.aubry1995_nine_compartment_model_of_fluid_phase_biomd0000000987_model:Aubry1995NineCompartmentModelOfFluidPhaseBiomd0000000987Model
   init_kwargs:
     model_path: data/BIOMD0000000987.xml

@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000446
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000446?filename=BIOMD0000000446_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.erguler2013_unfolded_protein_stress_response_biomd0000000446_model:Erguler2013UnfoldedProteinStressResponseBiomd0000000446Model
   init_kwargs:
     model_path: data/BIOMD0000000446.xml

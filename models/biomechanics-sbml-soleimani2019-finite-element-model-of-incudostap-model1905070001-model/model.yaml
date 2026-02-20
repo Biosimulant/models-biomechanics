@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1905070001
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1905070001?filename=model9.feb
   license: CC0
-bsim:
+biosim:
   entrypoint: src.soleimani2019_finite_element_model_of_incudostap_model1905070001_model:Soleimani2019FiniteElementModelOfIncudostapModel1905070001Model
   init_kwargs:
     model_path: data/MODEL1905070001.xml

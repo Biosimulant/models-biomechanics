@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000247
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000247?filename=BIOMD0000000247_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.ralser2007_carbohydrate_rerouting_ros_biomd0000000247_model:Ralser2007CarbohydrateReroutingRosBiomd0000000247Model
   init_kwargs:
     model_path: data/BIOMD0000000247.xml

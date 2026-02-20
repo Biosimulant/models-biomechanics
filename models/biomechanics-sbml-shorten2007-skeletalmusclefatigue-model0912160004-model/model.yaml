@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0912160004
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912160004?filename=MODEL0912160004_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.shorten2007_skeletalmusclefatigue_model0912160004_model:Shorten2007SkeletalmusclefatigueModel0912160004Model
   init_kwargs:
     model_path: data/MODEL0912160004.xml
