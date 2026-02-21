@@ -1,67 +1,42 @@
-# models
+# models-biomechanics
 
-Public curated monorepo of biological simulation model packs and composed spaces for the **biosim** platform. Models are modular, composable components that can be wired together into full simulation scenarios without writing code — just YAML.
+Curated collection of **biomechanics** simulation models for the **biosim** platform. This repository contains computational models of mechanical and physical processes in biological systems, including muscle mechanics, fluid dynamics, stress responses, and biomechanical interactions.
 
 ## What's Inside
 
-### Models (20 packages)
+### Models (19 packages)
 
 Each model is a self-contained simulation component with a `model.yaml` manifest.
 
-**Neuroscience** — spiking neural networks, synaptic dynamics, and neural monitoring:
+**Biomechanics** — mechanical forces, stress responses, and physical processes in biological systems:
 
 | Model | Description |
 |-------|-------------|
-| `neuro-izhikevich-population` | Spiking neuron population (Regular Spiking, Fast Spiking presets) |
-| `neuro-hodgkin-huxley-population` | Conductance-based Hodgkin-Huxley neuron population |
-| `neuro-hodgkin-huxley-state-monitor` | Detailed HH state monitor (V, gates, ionic currents) |
-| `neuro-exp-synapse-current` | Exponential-decay synapses with configurable connectivity |
-| `neuro-step-current` | Constant/step current injection into neurons |
-| `neuro-poisson-input` | Poisson-distributed spike train generator |
-| `neuro-spike-monitor` | Spike raster visualization |
-| `neuro-rate-monitor` | Firing rate computation and display |
-| `neuro-state-monitor` | Neuron state variable tracking (membrane potential, etc.) |
-| `neuro-spike-metrics` | Summary statistics from spike streams |
-
-**Ecology** — population dynamics, environments, and ecosystem interactions:
-
-| Model | Description |
-|-------|-------------|
-| `ecology-abiotic-environment` | Broadcasts environmental conditions (temperature, water, food, sunlight) |
-| `ecology-organism-population` | Population dynamics with birth, death, and predation |
-| `ecology-predator-prey-interaction` | Predation rates and functional response |
-| `ecology-population-monitor` | Population size tracking over time |
-| `ecology-phase-space-monitor` | Predator vs prey phase-space visualization |
-| `ecology-population-metrics` | Ecosystem summary statistics |
-
-**Virtual Cell** — gene regulatory networks, perturbations, and expression monitoring:
-
-| Model | Description |
-|-------|-------------|
-| `virtualcell-perturbation-source` | Defines gene perturbations (knockout/overexpression) over time |
-| `virtualcell-grn-predictor` | Classical GRN-based virtual cell producing expression profiles |
-| `virtualcell-arc-state-predictor` | Arc Institute State Transition ML model for expression prediction |
-| `virtualcell-expression-translator` | Translates expression profiles into neural input currents |
-| `virtualcell-expression-monitor` | Visualizes gene expression fold-changes and timeseries |
-
-### Spaces (6 composed simulations)
-
-Spaces wire multiple models into runnable simulation scenarios.
-
-| Space | Models | Description |
-|-------|--------|-------------|
-| `neuro-single-neuron` | 5 | Single Izhikevich neuron with step current, monitors, and metrics |
-| `neuro-microcircuit` | 13 | Balanced E/I microcircuit: 40 excitatory + 10 inhibitory neurons, Poisson input, recurrent synaptic connectivity |
-| `ecology-predator-prey` | 7 | Classic predator-prey dynamics with environment broadcast and monitors |
-| `ecology-temperature-control` | 7 | Predator-prey ecosystem where environment temperature is an exposed parameter |
-| `virtualcell-drug-neural-effect` | 8 | Virtual cell perturbation translated into a neural spiking response |
+| `biomechanics-sbml-aubry1995-multi-compartment-model-of-fluid-phase` | Multi-compartment fluid-phase endocytosis kinetics in Dictyostelium |
+| `biomechanics-sbml-aubry1995-nine-compartment-model-of-fluid-phase` | Nine-compartment fluid-phase endocytosis kinetics model |
+| `biomechanics-sbml-carpenter-2024-mechanical-control-of-growing` | Computational framework for predicting cell proliferation patterns |
+| `biomechanics-sbml-erguler2013-unfolded-protein-stress-response` | Unfolded protein stress response dynamics |
+| `biomechanics-sbml-heldt2002-orthostaticstress-circpbpk` | Cardiovascular response to orthostatic stress (circulation PBPK) |
+| `biomechanics-sbml-heldt2002-orthostaticstress-heart` | Cardiovascular response to orthostatic stress (heart model) |
+| `biomechanics-sbml-heldt2002-orthostaticstress-lpc` | Cardiovascular response to orthostatic stress (LPC model) |
+| `biomechanics-sbml-hunziker2010-p53-stressspecificresponse` | Stress-specific response of the p53-Mdm2 system |
+| `biomechanics-sbml-irp1443reg-ralstonia-solanacearum-virulence` | Virulence regulatory network of R. solanacearum |
+| `biomechanics-sbml-koo2013-integrated-shear-stress-no-production` | Integrated shear stress-induced NO production in endothelial cells |
+| `biomechanics-sbml-koo2013-shear-stress-calcium-influx` | Shear stress-induced calcium influx dynamics |
+| `biomechanics-sbml-koo2013-shear-stress-no-production` | Shear stress-induced nitric oxide production model |
+| `biomechanics-sbml-ralser2007-carbohydrate-rerouting-ros` | Dynamic rerouting of carbohydrate flux and ROS response |
+| `biomechanics-sbml-rong2020-grover-qm8-electronic-prediction` | GROVER embedding QM8 electronic property prediction |
+| `biomechanics-sbml-russomanno2023-systems-approach-rat` | Simcyp PBPK models for rat species |
+| `biomechanics-sbml-russomanno2023-systems-approach-mouse` | Simcyp PBPK models for mouse species |
+| `biomechanics-sbml-shorten2007-skeletal-muscle-fatigue` | Mathematical model of fatigue in skeletal muscle force contraction |
+| `biomechanics-sbml-sivery2016-mammalian-heat-shock-response` | Mammalian heat shock response under environmental stress |
+| `biomechanics-sbml-soleimani2019-incudostapedial-mechanics` | Finite-element model of incudostapedial mechanics |
 
 ## Layout
 
 ```
-models/
+models-biomechanics/
 ├── models/<model-slug>/     # One model package per folder, each with model.yaml
-├── spaces/<space-slug>/     # Composed spaces with space.yaml
 ├── libs/                    # Shared helper code for curated models
 ├── templates/model-pack/    # Starter template for new model packs
 ├── scripts/                 # Manifest and entrypoint validation scripts
@@ -79,25 +54,22 @@ Every model implements the `biosim.BioModule` interface:
 - **`outputs()`** — declares named output signals the module produces
 - **`advance_to(t)`** — advances the model's internal state to time `t`
 
-Most curated models include Python source under `src/` and are wired together via `space.yaml` without additional code.
+Most curated models include Python source under `src/` and are wired together via `space.yaml` in composed simulations without additional code.
 
-### Wiring
+### Model Standards
 
-Spaces connect models by routing outputs to inputs in `space.yaml`:
+All models in this repository:
+- Use SBML (Systems Biology Markup Language) format
+- Are sourced from BioModels database and other curated repositories
+- Include tellurium runtime for SBML execution
+- Provide `state` output for monitoring simulation results
+- Support configurable timesteps via `min_dt` parameter
 
-```yaml
-wiring:
-  - from: current_source.current
-    to: [neuron.input_current]
-  - from: neuron.spikes
-    to: [spike_monitor.spikes, rate_monitor.spikes]
-```
+### Running Models
 
-No code changes needed to recombine models into new configurations.
+Models are loaded and executed by the `biosim-platform`. The platform reads `model.yaml`, instantiates the model from its entrypoint, and runs the simulation loop at the configured timestep for the specified duration.
 
-### Running a Space
-
-Spaces are loaded and executed by the `biosim-platform`. The platform reads `space.yaml`, instantiates models from their manifests, wires signals, and runs the simulation loop at the configured `tick_dt` timestep for the specified `duration`.
+Individual models can be integrated into larger composed simulations (spaces) by wiring their outputs to other models' inputs.
 
 ## Getting Started
 
@@ -117,25 +89,26 @@ pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
 1. Copy `templates/model-pack/` to `models/<your-model-slug>/`
 2. Edit `model.yaml` with metadata, entrypoint, and pinned dependencies
 3. Implement your module (subclass `biosim.BioModule` or use a built-in pack)
-4. Validate: `python scripts/validate_manifests.py && python scripts/check_entrypoints.py`
+4. Add biomechanics-specific tags and categorization
+5. Validate: `python scripts/validate_manifests.py && python scripts/check_entrypoints.py`
 
-### Create a New Space
+### Using Models in Spaces
 
-1. Create `spaces/<your-space-slug>/space.yaml`
-2. Reference models by `manifest_path` (e.g., `models/neuro-step-current/model.yaml`)
-3. Define wiring between model outputs and inputs
-4. Set `runtime.duration` and `runtime.tick_dt`
+To integrate biomechanics models into larger simulations:
+
+1. Reference models by `manifest_path` (e.g., `models/biomechanics-sbml-shorten2007-skeletal-muscle-fatigue/model.yaml`)
+2. Wire model outputs to inputs of other models in your space configuration
+3. Configure runtime parameters and simulation duration
 
 ## Linking in biosim-platform
 
-- Root manifests can be linked with `manifest_path=model.yaml` or `space.yaml`
-- Subdirectory manifests require explicit paths:
-  - `models/neuro-izhikevich-population/model.yaml`
-  - `spaces/neuro-microcircuit/space.yaml`
+- Root manifests can be linked with explicit paths:
+  - `models/biomechanics-sbml-shorten2007-skeletal-muscle-fatigue/model.yaml`
+- Models can be composed with other domain models (neuroscience, metabolism, etc.) in multi-scale simulations
 
 ## External Repos
 
-External authors can keep models in independent repositories and link them directly in `biosim-platform`. This monorepo is curated, not exclusive.
+External authors can keep models in independent repositories and link them directly in `biosim-platform`. This repository is curated, not exclusive.
 
 ## Validation & CI
 
@@ -143,7 +116,7 @@ Three scripts enforce repository integrity on every push:
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/validate_manifests.py` | Schema validation for all model.yaml and space.yaml files |
+| `scripts/validate_manifests.py` | Schema validation for all model.yaml files |
 | `scripts/check_entrypoints.py` | Verifies Python entrypoints are importable and callable |
 | `scripts/check_public_boundary.sh` | Prevents business-sensitive content in this public repo |
 
@@ -152,10 +125,21 @@ The CI pipeline (`.github/workflows/ci.yml`) runs: **secret scan** → **manifes
 ## Contributing
 
 - All dependencies must use exact version pinning (`==`)
-- Model slugs use kebab-case with domain prefix (`neuro-`, `ecology-`, `virtualcell-`)
-- Custom modules must follow the `biosim.BioModule` interface
+- Model slugs use kebab-case with domain prefix (`biomechanics-sbml-`)
+- Models must follow the `biosim.BioModule` interface
+- SBML models use tellurium runtime for execution
 - Pre-commit hooks enforce trailing whitespace, EOF newlines, YAML syntax, and secret detection
 - See [docs/PUBLIC_INTERNAL_BOUNDARY.md](docs/PUBLIC_INTERNAL_BOUNDARY.md) for content policy
+
+## Domain-Specific Notes
+
+**Biomechanics Focus Areas:**
+- Muscle mechanics and fatigue
+- Cardiovascular biomechanics and hemodynamics
+- Cellular stress responses (heat shock, oxidative stress, protein folding)
+- Fluid dynamics and transport processes
+- Mechanical force transduction and signaling
+- Physiologically-based pharmacokinetic (PBPK) modeling
 
 ## License
 
