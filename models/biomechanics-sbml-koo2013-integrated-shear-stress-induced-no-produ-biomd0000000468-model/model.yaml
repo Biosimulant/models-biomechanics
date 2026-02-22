@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Biomechanics: Koo2013IntegratedShearStressInducedNoProduBiomd0000000468Model'
-description: "Andrew Koo, David Nordsletten, Renato Umeton, Beracah Yankama, Shiva\
-  \ Ayyadurai, Guillermo Garc\xEDa-Carde\xF1a & C. Forbes Dewey. In silico modeling\
-  \ of shear-stress-induced nitric oxide production in endoth"
+description: "Andrew Koo, David Nordsletten, Renato Umeton, Beracah Yankama, Shiva Ayyadurai, Guillermo Garc\u00eda-Carde\u00f1a & C. It can be used to explore biomechanics koo2013 integrated shear stress induced dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - biomechanics

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Biomechanics: Irp1443regRalstoniaSolanacearumGmi1000ViruleModel1710170000Model'
-description: We reconstructed the Virulence Regulatory Network (VRN) of R. solanacearum
-  strain GMI1000 by collecting bibliographical information based on genetic and genomic
-  studies, including three transcriptomic
+description: "We reconstructed the Virulence Regulatory Network (VRN) of R. solanacearum strain GMI1000 by collecting bibliographical information based on genetic and genomic studies, including three transcriptomic."
 standard: other
 tags:
 - biomechanics

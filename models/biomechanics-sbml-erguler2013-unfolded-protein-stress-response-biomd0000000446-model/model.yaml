@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Biomechanics: Erguler2013UnfoldedProteinStressResponseBiomd0000000446Model'
-description: Erguler2013 - Unfolded protein stress response The model investigates
-  the mechanism by which UPR (unfolded protein response) outcome switches between
-  survival and death. This model is described in the
+description: "Erguler2013 - Unfolded protein stress response The model investigates the mechanism by which UPR (unfolded protein response) outcome switches between survival and death. It can be used to explore biomechanics erguler2013 unfolded protein stress response dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - biomechanics

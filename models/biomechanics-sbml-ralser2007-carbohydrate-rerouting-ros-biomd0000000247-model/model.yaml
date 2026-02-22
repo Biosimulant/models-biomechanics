@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Biomechanics: Ralser2007CarbohydrateReroutingRosBiomd0000000247Model'
-description: This is the model with unfitted parameters described in the article Dynamic
-  rerouting of the carbohydrate flux is key to counteracting oxidative stress Markus
-  Ralser, Mirjam M Wamelink, Axel Kowald, B
+description: "This is the model with unfitted parameters described in the article Dynamic rerouting of the carbohydrate flux is key to counteracting oxidative stress Markus Ralser, Mirjam M Wamelink, Axel Kowald, B. It can be used to explore biomechanics ralser2007 carbohydrate rerouting ros BioModels0000000247 dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - biomechanics

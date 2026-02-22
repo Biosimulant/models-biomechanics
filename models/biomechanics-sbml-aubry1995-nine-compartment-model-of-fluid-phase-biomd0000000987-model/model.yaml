@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Biomechanics: Aubry1995NineCompartmentModelOfFluidPhaseBiomd0000000987Model'
-description: 'Fluid-phase endoeytosis (pinocytosis) kinetics were studied in Dictyostelium
-  discoideum amoebae from the axenic strain Ax-2 that exhibits high rates of fluid-phase
-  endoeytosis when cultured in liquid '
+description: "Fluid-phase endoeytosis (pinocytosis) kinetics were studied in Dictyostelium discoideum amoebae from the axenic strain Ax-2 that exhibits high rates of fluid-phase endoeytosis when cultured in liquid. It can be used to explore biomechanics aubry1995 nine compartment of fluid dynamics and compare simulation behavior across conditions."
 standard: other
 tags:
 - biomechanics
