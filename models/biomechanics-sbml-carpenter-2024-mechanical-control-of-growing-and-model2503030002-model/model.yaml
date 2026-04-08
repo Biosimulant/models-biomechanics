@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Biomechanics: Carpenter2024MechanicalControlOfGrowingAndModel2503030002Model'
+title: "Carpenter 2024 - Mechanical control of growing and homeostatic epithelia"
 description: "a computational framework to predict the patterns of cell proliferation in growing epithelial tissues, connecting single-cell behaviors and cell-cell interactions to tissue-level growth. It can be used to explore biomechanics carpenter 2024 mechanical control of dynamics and compare simulation behavior across conditions."
 standard: other
 tags:

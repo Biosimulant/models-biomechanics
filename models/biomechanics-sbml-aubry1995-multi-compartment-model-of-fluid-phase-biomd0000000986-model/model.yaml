@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Biomechanics: Aubry1995MultiCompartmentModelOfFluidPhaseBiomd0000000986Model'
+title: "Aubry1995 - Multi-compartment model of fluid-phase endocytosis kinetics in Dictyostelium discoideum"
 description: "Fluid-phase endoeytosis (pinocytosis) kinetics were studied in Dictyostelium discoideum amoebae from the axenic strain Ax-2 that exhibits high rates of fluid-phase endoeytosis when cultured in liquid. It can be used to explore biomechanics aubry1995 multi compartment of fluid dynamics and compare simulation behavior across conditions."
 standard: other
 tags:

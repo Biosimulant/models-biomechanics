@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Biomechanics: Russomanno2023ASystemsApproachRevealsSpecieModel2307070001Model'
+title: "Russomanno2023-A systems approach reveals species differences in hepatic stress response capacity-RAT_PBPK"
 description: "Simcyp PBPK models developed for rat to support a systems approach to investigating species differences in hepatic stress response capacity. It can be used to explore biomechanics russomanno2023 a systems approach reveals dynamics and compare simulation behavior across conditions."
 standard: other
 tags:

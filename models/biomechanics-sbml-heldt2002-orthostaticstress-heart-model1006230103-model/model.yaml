@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Biomechanics: Heldt2002OrthostaticstressHeartModel1006230103Model'
+title: "Heldt2002_OrthostaticStress_heart"
 description: "This a model from the article: Computational modeling of cardiovascular response to orthostatic stress. Heldt T, Shim EB, Kamm RD, Mark RG."
 standard: other
 tags:
