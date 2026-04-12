@@ -11,14 +11,13 @@ This model has been trained using the GROVER embedding with the QM8 dataset from
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-rong2020-grover-qm8-prediction-of-the-electronic-model2406040002-model
     alias: model
-    manifest_path: models/biomechanics-sbml-rong2020-grover-qm8-prediction-of-the-electronic-model2406040002-model/model.yaml
 ```
 
 ## Tags

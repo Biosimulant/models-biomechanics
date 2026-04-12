@@ -11,14 +11,13 @@ We reconstructed the Virulence Regulatory Network (VRN) of R. solanacearum strai
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-irp1443reg-ralstonia-solanacearum-gmi1000-virule-model1710170000-model
     alias: model
-    manifest_path: models/biomechanics-sbml-irp1443reg-ralstonia-solanacearum-gmi1000-virule-model1710170000-model/model.yaml
 ```
 
 ## Tags

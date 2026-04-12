@@ -11,14 +11,13 @@ This is a finite-element model of the mechanics of the incudostapedial joint in 
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-soleimani2019-finite-element-model-of-incudostap-model1905070001-model
     alias: model
-    manifest_path: models/biomechanics-sbml-soleimani2019-finite-element-model-of-incudostap-model1905070001-model/model.yaml
 ```
 
 ## Tags

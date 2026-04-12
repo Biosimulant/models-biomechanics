@@ -11,14 +11,13 @@ This a model from the article: Computational modeling of cardiovascular response
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-heldt2002-orthostaticstress-lpc-model1006230113-model
     alias: model
-    manifest_path: models/biomechanics-sbml-heldt2002-orthostaticstress-lpc-model1006230113-model/model.yaml
 ```
 
 ## Tags

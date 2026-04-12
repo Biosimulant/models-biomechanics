@@ -11,14 +11,13 @@ Erguler2013 - Unfolded protein stress response The model investigates the mechan
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-erguler2013-unfolded-protein-stress-response-biomd0000000446-model
     alias: model
-    manifest_path: models/biomechanics-sbml-erguler2013-unfolded-protein-stress-response-biomd0000000446-model/model.yaml
 ```
 
 ## Tags

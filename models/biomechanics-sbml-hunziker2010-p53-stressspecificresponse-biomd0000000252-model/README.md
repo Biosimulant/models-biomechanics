@@ -11,14 +11,13 @@ This a model from the article: Stress-specific response of the p53-Mdm2 feedback
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-hunziker2010-p53-stressspecificresponse-biomd0000000252-model
     alias: model
-    manifest_path: models/biomechanics-sbml-hunziker2010-p53-stressspecificresponse-biomd0000000252-model/model.yaml
 ```
 
 ## Tags

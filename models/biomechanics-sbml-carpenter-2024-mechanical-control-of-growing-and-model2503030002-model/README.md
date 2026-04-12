@@ -11,14 +11,13 @@ a computational framework to predict the patterns of cell proliferation in growi
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-carpenter-2024-mechanical-control-of-growing-and-model2503030002-model
     alias: model
-    manifest_path: models/biomechanics-sbml-carpenter-2024-mechanical-control-of-growing-and-model2503030002-model/model.yaml
 ```
 
 ## Tags

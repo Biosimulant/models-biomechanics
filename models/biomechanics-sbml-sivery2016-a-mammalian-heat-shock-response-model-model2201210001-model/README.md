@@ -11,14 +11,13 @@ Environmental stress, such as oxidative or heat stress, induces the activation o
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-sivery2016-a-mammalian-heat-shock-response-model-model2201210001-model
     alias: model
-    manifest_path: models/biomechanics-sbml-sivery2016-a-mammalian-heat-shock-response-model-model2201210001-model/model.yaml
 ```
 
 ## Tags

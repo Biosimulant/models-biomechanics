@@ -11,14 +11,13 @@ Simcyp PBPK models developed for rat to support a systems approach to investigat
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-russomanno2023-a-systems-approach-reveals-specie-model2307070001-model
     alias: model
-    manifest_path: models/biomechanics-sbml-russomanno2023-a-systems-approach-reveals-specie-model2307070001-model/model.yaml
 ```
 
 ## Tags

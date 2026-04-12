@@ -11,14 +11,13 @@ This a model from the article: A mathematical model of fatigue in skeletal muscl
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-shorten2007-skeletalmusclefatigue-model0912160004-model
     alias: model
-    manifest_path: models/biomechanics-sbml-shorten2007-skeletalmusclefatigue-model0912160004-model/model.yaml
 ```
 
 ## Tags

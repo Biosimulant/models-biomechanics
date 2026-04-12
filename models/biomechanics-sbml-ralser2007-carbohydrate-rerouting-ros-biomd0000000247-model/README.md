@@ -11,14 +11,13 @@ This is the model with unfitted parameters described in the article Dynamic rero
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/biomechanics-sbml-ralser2007-carbohydrate-rerouting-ros-biomd0000000247-model
     alias: model
-    manifest_path: models/biomechanics-sbml-ralser2007-carbohydrate-rerouting-ros-biomd0000000247-model/model.yaml
 ```
 
 ## Tags
