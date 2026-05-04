@@ -297,6 +297,7 @@ class Koo2013ShearStressNoProductionModel(biosim.BioModule):
         for name, (_src, units, desc) in _HEADLINE_OUTPUTS.items():
             specs[name] = SignalSpec.scalar(
                 dtype="float64",
+                emitted_unit=units,
                 description=desc + f" Units: {units}.",
             )
         return specs
@@ -523,4 +524,3 @@ class Koo2013ShearStressNoProductionModel(biosim.BioModule):
                     self._runner[sbml_id] = float(base) * float(number)
                 except (KeyError, ValueError, TypeError, RuntimeError):
                     pass
-
