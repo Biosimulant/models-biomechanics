@@ -1,0 +1,65 @@
+schema_version: '2.0'
+title: Koo2013 Shear-Stress Induced Calcium Influx and eNOS Activation
+description: Koo et al. (2013) model of how laminar shear stress at the endothelial
+  surface drives calcium influx and activates endothelial nitric oxide synthase (eNOS).
+standard: other
+tags:
+- biomechanics
+- endothelial
+- shear-stress
+- mechanotransduction
+- calcium
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Andrew Koo
+- Diana Nordsletten
+- Raquel Umeton
+- Brian Yankama
+- Sukanya Ayyadurai
+- Greg M. Fitzgerald
+- Cynthia A. Stokes
+upstream:
+  id: biomodels_ebi:BIOMD0000000464
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000464
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000464
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000464
+  license: CC0
+biosim:
+  entrypoint: src.koo2013_shear_stress_calcium_influx:Koo2013ShearStressCalciumInfluxModel
+  init_kwargs:
+    model_path: data/BIOMD0000000464.xml
+    integration_step: 1.0
+  communication_step: 10.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/BIOMD0000000464.xml
+  description: Relative path to the curated SBML XML.
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: s
+  description: Output sampling step for the tellurium simulator.
+io:
+  inputs:
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Output sampling step for the tellurium simulator.
+  - name: stimulus_intensity
+  outputs:
+  - name: cytosolic_calcium
+  - name: ip3
+  - name: state
+    description: Latest value of every 14 tracked observables (species variables).
+  - name: summary
+    description: Final, peak, and minimum value per observable plus simulated duration.

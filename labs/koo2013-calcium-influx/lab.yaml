@@ -1,0 +1,30 @@
+schema_version: '2.0'
+title: Koo2013 Shear-Stress Induced Calcium Influx and eNOS Activation Lab
+description: Koo et al. (2013) model of how laminar shear stress at the endothelial
+  surface drives calcium influx and activates endothelial nitric oxide synthase (eNOS).
+models:
+- alias: koo2013_shear_stress_calcium_influx
+  path: model
+  parameters:
+    model_path: data/BIOMD0000000464.xml
+    integration_step: 1.0
+runtime:
+  duration: 600.0
+  communication_step: 10.0
+  initial_inputs: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: koo2013_shear_stress_calcium_influx.integration_step
+  - name: stimulus_intensity
+    maps_to: koo2013_shear_stress_calcium_influx.stimulus_intensity
+  outputs:
+  - name: cytosolic_calcium
+    maps_to: koo2013_shear_stress_calcium_influx.cytosolic_calcium
+  - name: ip3
+    maps_to: koo2013_shear_stress_calcium_influx.ip3
+  - name: state
+    maps_to: koo2013_shear_stress_calcium_influx.state
+  - name: summary
+    maps_to: koo2013_shear_stress_calcium_influx.summary
+wiring: []

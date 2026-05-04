@@ -1,0 +1,32 @@
+schema_version: '2.0'
+title: Heldt2002 Orthostatic Stress - Lumped Parameter Circulation Lab
+description: Heldt et al. (2002) lumped-parameter circulation (LPC) model tracking
+  aortic pressure, mean arterial pressure, and aortic flow under orthostatic stress.
+models:
+- alias: heldt2002_orthostaticstress_lpc
+  path: model
+  parameters:
+    model_path: data/MODEL1006230113.xml
+    integration_step: 0.05
+runtime:
+  duration: 60.0
+  communication_step: 1.0
+  initial_inputs: {}
+io:
+  inputs:
+  - name: heart_rate
+    maps_to: heldt2002_orthostaticstress_lpc.heart_rate
+  - name: integration_step
+    maps_to: heldt2002_orthostaticstress_lpc.integration_step
+  - name: peak_lv_elastance
+    maps_to: heldt2002_orthostaticstress_lpc.peak_lv_elastance
+  outputs:
+  - name: cardiac_output
+    maps_to: heldt2002_orthostaticstress_lpc.cardiac_output
+  - name: mean_arterial_pressure
+    maps_to: heldt2002_orthostaticstress_lpc.mean_arterial_pressure
+  - name: state
+    maps_to: heldt2002_orthostaticstress_lpc.state
+  - name: summary
+    maps_to: heldt2002_orthostaticstress_lpc.summary
+wiring: []

@@ -1,0 +1,61 @@
+schema_version: '2.0'
+title: Heldt2002 Orthostatic Stress - Lumped Parameter Circulation
+description: Heldt et al. (2002) lumped-parameter circulation (LPC) model tracking
+  aortic pressure, mean arterial pressure, and aortic flow under orthostatic stress.
+standard: other
+tags:
+- biomechanics
+- cardiovascular
+- lumped-parameter
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Thomas Heldt
+- Eun B. Shim
+- Roger D. Kamm
+- Roger G. Mark
+upstream:
+  id: biomodels_ebi:MODEL1006230113
+  source_db: biomodels_ebi
+  source_id: MODEL1006230113
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230113
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230113
+  license: CC0
+biosim:
+  entrypoint: src.heldt2002_orthostaticstress_lpc:Heldt2002OrthostaticstressLpcModel
+  init_kwargs:
+    model_path: data/MODEL1006230113.xml
+    integration_step: 0.05
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/MODEL1006230113.xml
+  description: Relative path to the curated SBML XML.
+- name: integration_step
+  value: 0.05
+  min: 0.0
+  units: s
+  description: Output sampling step for the tellurium simulator.
+io:
+  inputs:
+  - name: heart_rate
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Output sampling step for the tellurium simulator.
+  - name: peak_lv_elastance
+  outputs:
+  - name: cardiac_output
+  - name: mean_arterial_pressure
+  - name: state
+    description: Latest value of every 30 tracked observables (rateRule variables).
+  - name: summary
+    description: Final, peak, and minimum value per observable plus simulated duration.

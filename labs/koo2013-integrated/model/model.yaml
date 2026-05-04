@@ -1,0 +1,67 @@
+schema_version: '2.0'
+title: Koo2013 Integrated Shear-Stress Induced NO Production
+description: Koo et al. (2013) integrated endothelial mechanotransduction model combining
+  shear-stress sensing, calcium influx, eNOS activation, and NO production into a
+  single ODE system.
+standard: other
+tags:
+- biomechanics
+- endothelial
+- shear-stress
+- nitric-oxide
+- mechanotransduction
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Andrew Koo
+- Diana Nordsletten
+- Raquel Umeton
+- Brian Yankama
+- Sukanya Ayyadurai
+- Greg M. Fitzgerald
+- Cynthia A. Stokes
+upstream:
+  id: biomodels_ebi:BIOMD0000000468
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000468
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000468
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000468
+  license: CC0
+biosim:
+  entrypoint: src.koo2013_integrated_shear_stress_no_production:Koo2013IntegratedShearStressNoProductionModel
+  init_kwargs:
+    model_path: data/BIOMD0000000468.xml
+    integration_step: 1.0
+  communication_step: 10.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/BIOMD0000000468.xml
+  description: Relative path to the curated SBML XML.
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: s
+  description: Output sampling step for the tellurium simulator.
+io:
+  inputs:
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Output sampling step for the tellurium simulator.
+  - name: stimulus_intensity
+  outputs:
+  - name: active_eNOS
+  - name: cytosolic_calcium
+  - name: nitric_oxide
+  - name: state
+    description: Latest value of every 79 tracked observables (species variables).
+  - name: summary
+    description: Final, peak, and minimum value per observable plus simulated duration.

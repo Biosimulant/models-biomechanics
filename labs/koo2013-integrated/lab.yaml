@@ -1,0 +1,33 @@
+schema_version: '2.0'
+title: Koo2013 Integrated Shear-Stress Induced NO Production Lab
+description: Koo et al. (2013) integrated endothelial mechanotransduction model combining
+  shear-stress sensing, calcium influx, eNOS activation, and NO production into a
+  single ODE system.
+models:
+- alias: koo2013_integrated_shear_stress_no_production
+  path: model
+  parameters:
+    model_path: data/BIOMD0000000468.xml
+    integration_step: 1.0
+runtime:
+  duration: 600.0
+  communication_step: 10.0
+  initial_inputs: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: koo2013_integrated_shear_stress_no_production.integration_step
+  - name: stimulus_intensity
+    maps_to: koo2013_integrated_shear_stress_no_production.stimulus_intensity
+  outputs:
+  - name: active_eNOS
+    maps_to: koo2013_integrated_shear_stress_no_production.active_eNOS
+  - name: cytosolic_calcium
+    maps_to: koo2013_integrated_shear_stress_no_production.cytosolic_calcium
+  - name: nitric_oxide
+    maps_to: koo2013_integrated_shear_stress_no_production.nitric_oxide
+  - name: state
+    maps_to: koo2013_integrated_shear_stress_no_production.state
+  - name: summary
+    maps_to: koo2013_integrated_shear_stress_no_production.summary
+wiring: []

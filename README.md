@@ -1,5 +1,8 @@
 # models-biomechanics
 
+> Storage-only repo: each former root model now lives in `labs/<slug>/model/` and is wrapped by
+> `labs/<slug>/lab.yaml`. This repo has no repo-level import catalog and no composed labs at the root.
+
 Curated collection of **biomechanics** simulation models for the **biosim** platform. This repository contains computational models of mechanical and physical processes in biological systems, including muscle mechanics, fluid dynamics, stress responses, and biomechanical interactions.
 
 ## What's Inside
@@ -10,25 +13,25 @@ Each model is a self-contained simulation component with a `model.yaml` manifest
 
 **Biomechanics** — mechanical forces, stress responses, and physical processes in biological systems:
 
-| Model | Description |
+| Sublab | Description |
 |-------|-------------|
 | `biomechanics-sbml-aubry1995-multi-compartment-model-of-fluid-phase` | Multi-compartment fluid-phase endocytosis kinetics in Dictyostelium |
 | `biomechanics-sbml-aubry1995-nine-compartment-model-of-fluid-phase` | Nine-compartment fluid-phase endocytosis kinetics model |
 | `biomechanics-sbml-carpenter-2024-mechanical-control-of-growing` | Computational framework for predicting cell proliferation patterns |
 | `biomechanics-sbml-erguler2013-unfolded-protein-stress-response` | Unfolded protein stress response dynamics |
-| `biomechanics-sbml-heldt2002-orthostaticstress-circpbpk` | Cardiovascular response to orthostatic stress (circulation PBPK) |
-| `biomechanics-sbml-heldt2002-orthostaticstress-heart` | Cardiovascular response to orthostatic stress (heart model) |
-| `biomechanics-sbml-heldt2002-orthostaticstress-lpc` | Cardiovascular response to orthostatic stress (LPC model) |
+| `heldt2002-circulation-pbpk` | Cardiovascular response to orthostatic stress (circulation PBPK) |
+| `heldt2002-heart` | Cardiovascular response to orthostatic stress (heart model) |
+| `heldt2002-lpc` | Cardiovascular response to orthostatic stress (LPC model) |
 | `biomechanics-sbml-hunziker2010-p53-stressspecificresponse` | Stress-specific response of the p53-Mdm2 system |
 | `biomechanics-sbml-irp1443reg-ralstonia-solanacearum-virulence` | Virulence regulatory network of R. solanacearum |
-| `biomechanics-sbml-koo2013-integrated-shear-stress-no-production` | Integrated shear stress-induced NO production in endothelial cells |
-| `biomechanics-sbml-koo2013-shear-stress-calcium-influx` | Shear stress-induced calcium influx dynamics |
-| `biomechanics-sbml-koo2013-shear-stress-no-production` | Shear stress-induced nitric oxide production model |
+| `koo2013-integrated` | Integrated shear stress-induced NO production in endothelial cells |
+| `koo2013-calcium-influx` | Shear stress-induced calcium influx dynamics |
+| `koo2013-no-production` | Shear stress-induced nitric oxide production model |
 | `biomechanics-sbml-ralser2007-carbohydrate-rerouting-ros` | Dynamic rerouting of carbohydrate flux and ROS response |
 | `biomechanics-sbml-rong2020-grover-qm8-electronic-prediction` | GROVER embedding QM8 electronic property prediction |
 | `biomechanics-sbml-russomanno2023-systems-approach-rat` | Simcyp PBPK models for rat species |
 | `biomechanics-sbml-russomanno2023-systems-approach-mouse` | Simcyp PBPK models for mouse species |
-| `biomechanics-sbml-shorten2007-skeletal-muscle-fatigue` | Mathematical model of fatigue in skeletal muscle force contraction |
+| `shorten2007-muscle-fatigue` | Skeletal muscle fatigue (currently parked under `labs-orphan/` — see that folder's README; the upstream SBML has no settable stimulation parameter) |
 | `biomechanics-sbml-sivery2016-mammalian-heat-shock-response` | Mammalian heat shock response under environmental stress |
 | `biomechanics-sbml-soleimani2019-incudostapedial-mechanics` | Finite-element model of incudostapedial mechanics |
 
@@ -52,9 +55,9 @@ Every model implements the `biosim.BioModule` interface:
 
 - **`inputs()`** — declares named input signals the module consumes
 - **`outputs()`** — declares named output signals the module produces
-- **`advance_to(t)`** — advances the model's internal state to time `t`
+- **`advance_window(t)`** — advances the model's internal state to time `t`
 
-Most curated models include Python source under `src/` and are wired together via `space.yaml` in composed simulations without additional code.
+Most curated models include Python source under `src/` and are wired together via `lab.yaml` in composed simulations without additional code.
 
 ### Model Standards
 
@@ -63,7 +66,7 @@ All models in this repository:
 - Are sourced from BioModels database and other curated repositories
 - Include tellurium runtime for SBML execution
 - Provide `state` output for monitoring simulation results
-- Support configurable timesteps via `min_dt` parameter
+- Support configurable timesteps via `communication_step` parameter
 
 ### Running Models
 
@@ -96,14 +99,14 @@ pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
 
 To integrate biomechanics models into larger simulations:
 
-1. Reference models by `manifest_path` (e.g., `models/biomechanics-sbml-shorten2007-skeletal-muscle-fatigue/model.yaml`)
+1. Reference models by `manifest_path` (e.g., `labs-orphan/shorten2007-muscle-fatigue/model/model.yaml`)
 2. Wire model outputs to inputs of other models in your space configuration
 3. Configure runtime parameters and simulation duration
 
 ## Linking in biosim-platform
 
 - Root manifests can be linked with explicit paths:
-  - `models/biomechanics-sbml-shorten2007-skeletal-muscle-fatigue/model.yaml`
+  - `labs-orphan/shorten2007-muscle-fatigue/model/model.yaml`
 - Models can be composed with other domain models (neuroscience, metabolism, etc.) in multi-scale simulations
 
 ## External Repos

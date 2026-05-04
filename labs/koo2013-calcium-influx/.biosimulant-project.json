@@ -1,0 +1,9 @@
+{
+  "schema_version": "1",
+  "local_id": "f0c15547-67a3-4284-a112-3eaf5f79abcd",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "f0d9bb27-61d3-4d7a-b53b-ce4f3a8245b6",
+  "created_at": "2026-05-04 07:03:49",
+  "package_name": "local/Koo2013_Shear-Stress_Induced_Calcium_Influx_and_eNOS_Activation_Lab"
+}

@@ -1,0 +1,35 @@
+schema_version: "2.0"
+title: "Koo2013 Shear-to-NO Composed Pathway"
+description: "End-to-end shear-stress driven mechanotransduction. Composes the calcium-influx submodel with the NO-production submodel by wiring the cytosolic calcium output of the first into the cytosolic calcium input of the second. Single experimental knob: stimulus_intensity."
+models:
+  - alias: calcium_influx
+    path: model/calcium_influx
+  - alias: no_production
+    path: model/no_production
+runtime:
+  duration: 600.0
+  communication_step: 10.0
+  initial_inputs: {}
+io:
+  inputs:
+    - name: stimulus_intensity
+      maps_to: calcium_influx.stimulus_intensity
+    - name: integration_step
+      maps_to: calcium_influx.integration_step
+  outputs:
+    - name: cytosolic_calcium
+      maps_to: calcium_influx.cytosolic_calcium
+    - name: ip3
+      maps_to: calcium_influx.ip3
+    - name: nitric_oxide
+      maps_to: no_production.nitric_oxide
+    - name: active_eNOS
+      maps_to: no_production.active_eNOS
+    - name: calcium_influx_state
+      maps_to: calcium_influx.state
+    - name: no_production_state
+      maps_to: no_production.state
+wiring:
+  - from: calcium_influx.cytosolic_calcium
+    to:
+      - no_production.cytosolic_calcium
