@@ -2,7 +2,7 @@
 
 This lab runs the Heldt et al. (2002) lumped-parameter circulation model. It asks: how do cardiac filling, aortic and pulmonary flow, mean arterial pressure, and the left-ventricular pressure-volume loop respond during a 60 s orthostatic-stress circulation run?
 
-The model wraps the BioModels EBI SBML asset [MODEL1006230113](https://www.ebi.ac.uk/biomodels/MODEL1006230113). The SBML dynamics are encoded as rate rules, so the wrapper tracks 30 observable variables and promotes stable headline outputs for cardiac output and mean arterial pressure.
+The model wraps the BioModels EBI SBML asset [MODEL1006230113](https://www.ebi.ac.uk/biomodels/MODEL1006230113). The `models/core` package handles SBML execution and stable headline outputs, while `models/visualisation` owns grouped charts, phase portraits, and plain-language summaries.
 
 ## What You'll See
 
@@ -30,10 +30,11 @@ The LV pressure-volume loop shows the last cardiac cycle as pressure against vol
 
 - `lab.yaml` describes the lab, runtime, inputs, outputs, and default model parameters.
 - `wiring-layout.json` places the model on the canvas.
-- `model/model.yaml` describes the model package, upstream SBML source, parameters, and ports.
-- `model/src/heldt2002_orthostaticstress_lpc.py` wraps the SBML model and builds the grouped visualizations.
-- `model/data/MODEL1006230113.xml` is the curated SBML model file from BioModels EBI.
-- `model/tests/` contains smoke tests for instantiation, simulation advance, visual output shape, and lab IO.
+- `models/core/model.yaml` describes the SBML execution package, upstream source, parameters, and ports.
+- `models/core/src/heldt2002_orthostaticstress_lpc.py` wraps the SBML model and publishes stable numeric outputs.
+- `models/core/data/MODEL1006230113.xml` is the curated SBML model file from BioModels EBI.
+- `models/visualisation/` contains the dedicated presentation model for grouped charts, summaries, and phase portraits.
+- `models/*/tests/` contains smoke tests for core execution and visualisation behavior.
 
 ## Inputs
 
@@ -79,11 +80,11 @@ The right side of the app should show grouped cardiovascular result panels, summ
 
 ## How to Edit It
 
-For scenario changes, start with `lab.yaml` and `model/model.yaml`.
+For scenario changes, start with `lab.yaml` and `models/core/model.yaml`.
 
 - Change `runtime.duration` in `lab.yaml` for a longer or shorter simulation.
 - Change `runtime.communication_step` if you want more or fewer reported points.
 - Change `heart_rate` or `peak_lv_elastance` to perturb the circulation scenario.
-- Change `integration_step` in `model/model.yaml` for finer or coarser Tellurium output sampling.
+- Change `integration_step` in `models/core/model.yaml` for finer or coarser Tellurium output sampling.
 
-To change the physiology itself, edit or replace `model/data/MODEL1006230113.xml`. Edit `model/src/heldt2002_orthostaticstress_lpc.py` only if you are changing observables, labels, grouping, or visualization behavior.
+To change the physiology itself, edit or replace `models/core/data/MODEL1006230113.xml`. Edit `models/core/src/heldt2002_orthostaticstress_lpc.py` only if you are changing execution behavior or published numeric outputs; edit `models/visualisation/` for labels, grouping, prose, and charts.

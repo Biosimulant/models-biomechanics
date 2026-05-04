@@ -4,8 +4,15 @@
     {
       "id": "heldt2002_orthostaticstress_circpbpk",
       "position": {
-        "x": 360,
+        "x": 0,
         "y": 0
+      }
+    },
+    {
+      "id": "visualisation",
+      "position": {
+        "x": 455.9920634920635,
+        "y": 361.7222222222223
       }
     }
   ]

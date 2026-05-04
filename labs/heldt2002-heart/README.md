@@ -2,7 +2,7 @@
 
 This lab runs the Heldt et al. (2002) isolated heart submodel from the orthostatic-stress cardiovascular system. It asks: how does the model's time-varying left-ventricular elastance waveform evolve across beats, and how do heart rate, systolic elastance, and diastolic elastance shape that contraction profile?
 
-The model wraps the BioModels EBI SBML asset [MODEL1006230103](https://www.ebi.ac.uk/biomodels/MODEL1006230103). Unlike the LPC and circulation-PBPK labs, this heart-only submodel does not contain chamber volume, pressure, or flow states. It focuses on timing helpers and the left-ventricular elastance function that drives the larger circulation models.
+The model wraps the BioModels EBI SBML asset [MODEL1006230103](https://www.ebi.ac.uk/biomodels/MODEL1006230103). Unlike the LPC and circulation-PBPK labs, this heart-only submodel does not contain chamber volume, pressure, or flow states. Its `models/core` package focuses on timing helpers and the left-ventricular elastance function that drives the larger circulation models, while `models/visualisation` owns the phase portrait, summary table, and user-facing explanation.
 
 ## What You'll See
 
@@ -26,10 +26,11 @@ The LV elastance phase portrait plots elastance against cardiac phase from 0 to 
 
 - `lab.yaml` describes the lab, runtime, inputs, outputs, and default model parameters.
 - `wiring-layout.json` places the model on the canvas.
-- `model/model.yaml` describes the model package, upstream SBML source, parameters, and ports.
-- `model/src/heldt2002_orthostaticstress_heart.py` wraps the SBML model and builds the visualizations.
-- `model/data/MODEL1006230103.xml` is the curated SBML model file from BioModels EBI.
-- `model/tests/` contains smoke tests for instantiation, simulation advance, visual output shape, and lab IO.
+- `models/core/model.yaml` describes the SBML execution package, upstream source, parameters, and ports.
+- `models/core/src/heldt2002_orthostaticstress_heart.py` wraps the SBML model and publishes stable numeric outputs.
+- `models/core/data/MODEL1006230103.xml` is the curated SBML model file from BioModels EBI.
+- `models/visualisation/` contains the internal presentation model for charts and narrative logic.
+- `models/*/tests/` contains smoke tests for core execution and visualisation behavior.
 
 ## Inputs
 
@@ -75,11 +76,11 @@ The right side of the app should show the elastance waveform, summary table, and
 
 ## How to Edit It
 
-For scenario changes, start with `lab.yaml` and `model/model.yaml`.
+For scenario changes, start with `lab.yaml` and `models/core/model.yaml`.
 
 - Change `runtime.duration` in `lab.yaml` for a longer or shorter simulation.
 - Change `runtime.communication_step` if you want more or fewer reported points.
 - Change `heart_rate`, `systolic_elastance`, or `diastolic_elastance` to perturb the contraction waveform.
-- Change `integration_step` in `model/model.yaml` for finer or coarser Tellurium output sampling.
+- Change `integration_step` in `models/core/model.yaml` for finer or coarser Tellurium output sampling.
 
 To study full chamber pressure-volume behavior, use `heldt2002-lpc`; this heart-only lab exposes the elastance driver rather than a complete circulation.

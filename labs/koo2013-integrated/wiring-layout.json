@@ -4,8 +4,15 @@
     {
       "id": "koo2013_integrated_shear_stress_no_production",
       "position": {
-        "x": 360,
+        "x": 0,
         "y": 0
+      }
+    },
+    {
+      "id": "visualisation",
+      "position": {
+        "x": 556.3015873015875,
+        "y": 454.4325396825397
       }
     }
   ]

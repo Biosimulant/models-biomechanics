@@ -1,6 +1,6 @@
 # Koo2013 Integrated Shear-Stress Induced NO Production Lab
 
-This lab wraps the integrated Koo et al. (2013) endothelial mechanotransduction model from BioModels source `BIOMD0000000468`. The canvas model is named `koo2013_integrated_shear_stress_no_production`, matching the screenshots below, and connects a shear-stress stimulus surrogate through calcium handling, mechanosensor signalling, eNOS activation, and nitric oxide production.
+This lab wraps the integrated Koo et al. (2013) endothelial mechanotransduction model from BioModels source `BIOMD0000000468`. The canvas model is named `koo2013_integrated_shear_stress_no_production`, matching the screenshots below, and connects a shear-stress stimulus surrogate through calcium handling, mechanosensor signalling, eNOS activation, and nitric oxide production. The `models/core` package handles SBML execution and numeric outputs, while `models/visualisation` owns internal grouped charts and narrative logic.
 
 Use this lab when the question is the end-to-end NO-production response rather than the isolated calcium-influx or NO-production submodules.
 
@@ -27,10 +27,11 @@ The summary view reports 65 species observables, identifies stored calcium in th
 | Path | Purpose |
 |---|---|
 | `lab.yaml` | Lab title, IO wiring, runtime defaults, and canvas metadata. |
-| `model/model.yaml` | Model package metadata, parameters, inputs, outputs, and units. |
-| `model/src/koo2013_integrated_shear_stress_no_production.py` | Tellurium-backed wrapper and visualization definitions. |
-| `model/data/BIOMD0000000468.xml` | Curated SBML model file from BioModels. |
-| `model/tests/` | Smoke coverage for model construction, stepping, and outputs. |
+| `models/core/model.yaml` | Core SBML execution package metadata, parameters, inputs, outputs, and units. |
+| `models/core/src/koo2013_integrated_shear_stress_no_production.py` | Tellurium-backed SBML execution wrapper. |
+| `models/core/data/BIOMD0000000468.xml` | Curated SBML model file from BioModels. |
+| `models/visualisation/` | Internal presentation model for charts and narrative logic. |
+| `models/*/tests/` | Smoke coverage for core execution and visualisation behavior. |
 
 ## Inputs and Outputs
 

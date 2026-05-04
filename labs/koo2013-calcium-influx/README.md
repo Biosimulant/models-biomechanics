@@ -2,7 +2,7 @@
 
 This lab runs the Koo et al. (2013) endothelial mechanotransduction model for shear-stress induced calcium influx. It asks: when endothelial cells experience a shear-stress stimulus, how do IP3 production, calcium-store release, cytosolic calcium, and buffered calcium evolve over ten minutes?
 
-The model wraps the BioModels EBI SBML asset [BIOMD0000000464](https://www.ebi.ac.uk/biomodels/BIOMD0000000464). This submodel is the calcium-influx/eNOS-activation entry point in the Koo2013 series, and the wrapper exposes stable headline outputs for cytosolic calcium and IP3.
+The model wraps the BioModels EBI SBML asset [BIOMD0000000464](https://www.ebi.ac.uk/biomodels/BIOMD0000000464). This submodel is the calcium-influx/eNOS-activation entry point in the Koo2013 series. Its `models/core` package stays focused on SBML execution and stable numeric outputs, while `models/visualisation` owns internal grouped charts and narrative logic.
 
 ## What You'll See
 
@@ -26,10 +26,11 @@ The What Happened table summarizes the run without reading every trace. In the s
 
 - `lab.yaml` describes the lab, runtime, inputs, outputs, and default model parameters.
 - `wiring-layout.json` places the model on the canvas.
-- `model/model.yaml` describes the model package, upstream SBML source, parameters, and ports.
-- `model/src/koo2013_shear_stress_calcium_influx.py` wraps the SBML model and builds the grouped visualizations.
-- `model/data/BIOMD0000000464.xml` is the curated SBML model file from BioModels EBI.
-- `model/tests/` contains smoke tests for instantiation, simulation advance, visual output shape, and lab IO.
+- `models/core/model.yaml` describes the SBML execution package, upstream source, parameters, and ports.
+- `models/core/src/koo2013_shear_stress_calcium_influx.py` wraps the SBML model and publishes stable numeric outputs.
+- `models/core/data/BIOMD0000000464.xml` is the curated SBML model file from BioModels EBI.
+- `models/visualisation/` contains the internal presentation model for charts and narrative logic.
+- `models/*/tests/` contains smoke tests for core execution and visualisation behavior.
 
 ## Inputs
 
@@ -74,11 +75,11 @@ The right side of the app should show the mechanical-input, calcium-subsystem, a
 
 ## How to Edit It
 
-For scenario changes, start with `lab.yaml` and `model/model.yaml`.
+For scenario changes, start with `lab.yaml` and `models/core/model.yaml`.
 
 - Change `runtime.duration` in `lab.yaml` for a longer or shorter simulation.
 - Change `runtime.communication_step` if you want more or fewer reported points.
 - Change `stimulus_intensity` to mimic weaker or stronger shear-stress-driven IP3 production.
-- Change `integration_step` in `model/model.yaml` for finer or coarser Tellurium output sampling.
+- Change `integration_step` in `models/core/model.yaml` for finer or coarser Tellurium output sampling.
 
 For downstream nitric-oxide production, wire this lab into `koo2013-no-production` or use the composed `koo2013-shear-to-no` lab.

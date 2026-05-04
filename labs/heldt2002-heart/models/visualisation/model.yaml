@@ -1,0 +1,39 @@
+schema_version: "2.0"
+title: "Heldt2002 Orthostatic Stress - Heart Visualisation"
+description: "Dedicated presentation model for the Heldt2002 heart lab."
+standard: other
+tags:
+  - biomechanics
+  - visualisation
+  - heldt2002
+authors:
+  - "Biosimulant Team"
+biosim:
+  entrypoint: "src.biomechanics_visualisation:BiomechanicsVisualisationModel"
+  init_kwargs:
+    integration_step: 0.5
+    lab_title: "Heldt2002 Orthostatic Stress - Heart Lab"
+    sources:
+      - alias: heldt2002_orthostaticstress_heart
+        path: ../core
+        observable_strategy: rateRule
+        phase_portrait:
+          title: "LV elastance phase portrait"
+          description: "LV elastance traced against cardiac phase across the latest cycle."
+          x_key: phase_x
+          y_key: phase_y
+          x_label: "Cardiac phase"
+          y_label: "LV elastance"
+          x_unit: "fraction of beat"
+          y_unit: "mmHg/mL"
+          series: "elastance"
+  communication_step: 0.5
+parameters:
+  - name: integration_step
+    value: 0.5
+    min: 0.0
+    units: "s"
+    description: "Sampling step for the visualisation model."
+io:
+  inputs: []
+  outputs: []

@@ -1,0 +1,63 @@
+schema_version: '2.0'
+title: Heldt2002 Orthostatic Stress - Heart
+description: Heldt et al. (2002) cardiac submodel for the orthostatic-stress cardiovascular
+  system, isolating contraction-driven ventricular dynamics.
+standard: other
+tags:
+- biomechanics
+- cardiovascular
+- heart
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Thomas Heldt
+- Eun B. Shim
+- Roger D. Kamm
+- Roger G. Mark
+upstream:
+  id: biomodels_ebi:MODEL1006230103
+  source_db: biomodels_ebi
+  source_id: MODEL1006230103
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230103
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230103
+  license: CC0
+biosim:
+  entrypoint: src.heldt2002_orthostaticstress_heart:Heldt2002OrthostaticstressHeartModel
+  init_kwargs:
+    model_path: data/MODEL1006230103.xml
+    integration_step: 0.01
+  communication_step: 0.5
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/MODEL1006230103.xml
+  description: Relative path to the curated SBML XML.
+- name: integration_step
+  value: 0.01
+  min: 0.0
+  units: s
+  description: Output sampling step for the tellurium simulator.
+io:
+  inputs:
+  - name: diastolic_elastance
+  - name: heart_rate
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Output sampling step for the tellurium simulator.
+  - name: systolic_elastance
+  outputs:
+  - name: elastance
+  - name: state
+    description: Latest value of every 1 tracked observables (rateRule variables).
+  - name: summary
+    description: Final, peak, and minimum value per observable plus simulated duration.
+  - name: visualisation_aux
+    description: Auxiliary phase-portrait coordinates and timing for the sibling visualisation model.

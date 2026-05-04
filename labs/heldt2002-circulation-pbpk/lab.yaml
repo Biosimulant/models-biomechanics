@@ -1,34 +1,50 @@
-schema_version: '2.0'
-title: Heldt2002 Orthostatic Stress - Circulation PBPK Lab
-description: Heldt et al. (2002) lumped circulation model used to study cardiovascular
-  response to orthostatic stress (head-up tilt and lower body negative pressure).
-models:
-- alias: heldt2002_orthostaticstress_circpbpk
-  path: model
-  parameters:
-    model_path: data/MODEL1006230084.xml
-    integration_step: 0.05
-runtime:
-  duration: 60.0
-  communication_step: 1.0
-  initial_inputs: {}
+description: Heldt et al. (2002) lumped circulation model used to study cardiovascular response to orthostatic stress (head-up tilt and lower body negative pressure).
 io:
   inputs:
-  - name: compliance_scale
-    maps_to: heldt2002_orthostaticstress_circpbpk.compliance_scale
-  - name: heart_rate
-    maps_to: heldt2002_orthostaticstress_circpbpk.heart_rate
-  - name: integration_step
-    maps_to: heldt2002_orthostaticstress_circpbpk.integration_step
-  - name: peripheral_resistance_scale
-    maps_to: heldt2002_orthostaticstress_circpbpk.peripheral_resistance_scale
+  - maps_to: heldt2002_orthostaticstress_circpbpk.compliance_scale
+    name: compliance_scale
+  - maps_to: heldt2002_orthostaticstress_circpbpk.heart_rate
+    name: heart_rate
+  - maps_to: heldt2002_orthostaticstress_circpbpk.integration_step
+    name: integration_step
+  - maps_to: heldt2002_orthostaticstress_circpbpk.peripheral_resistance_scale
+    name: peripheral_resistance_scale
   outputs:
-  - name: aortic_flow
-    maps_to: heldt2002_orthostaticstress_circpbpk.aortic_flow
-  - name: aortic_pressure
-    maps_to: heldt2002_orthostaticstress_circpbpk.aortic_pressure
-  - name: state
-    maps_to: heldt2002_orthostaticstress_circpbpk.state
-  - name: summary
-    maps_to: heldt2002_orthostaticstress_circpbpk.summary
-wiring: []
+  - maps_to: heldt2002_orthostaticstress_circpbpk.aortic_flow
+    name: aortic_flow
+  - maps_to: heldt2002_orthostaticstress_circpbpk.aortic_pressure
+    name: aortic_pressure
+  - maps_to: heldt2002_orthostaticstress_circpbpk.state
+    name: state
+  - maps_to: heldt2002_orthostaticstress_circpbpk.summary
+    name: summary
+models:
+- alias: heldt2002_orthostaticstress_circpbpk
+  parameters:
+    integration_step: 0.05
+    model_path: data/MODEL1006230084.xml
+  path: models/core
+- alias: visualisation
+  path: models/visualisation
+runtime:
+  communication_step: 1
+  duration: 60
+  initial_inputs: {}
+schema_version: '2.0'
+title: Heldt2002 Orthostatic Stress - Circulation PBPK Lab
+wiring:
+- from: heldt2002_orthostaticstress_circpbpk.aortic_flow
+  to:
+  - visualisation.heldt2002_orthostaticstress_circpbpk_aortic_flow
+- from: heldt2002_orthostaticstress_circpbpk.aortic_pressure
+  to:
+  - visualisation.heldt2002_orthostaticstress_circpbpk_aortic_pressure
+- from: heldt2002_orthostaticstress_circpbpk.state
+  to:
+  - visualisation.heldt2002_orthostaticstress_circpbpk_state
+- from: heldt2002_orthostaticstress_circpbpk.summary
+  to:
+  - visualisation.heldt2002_orthostaticstress_circpbpk_summary
+- from: heldt2002_orthostaticstress_circpbpk.visualisation_aux
+  to:
+  - visualisation.heldt2002_orthostaticstress_circpbpk_visualisation_aux

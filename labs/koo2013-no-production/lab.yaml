@@ -1,30 +1,43 @@
-schema_version: '2.0'
-title: Koo2013 Shear-Stress Induced NO Production Lab
-description: Koo et al. (2013) model of nitric oxide (NO) production downstream of
-  shear-stress-driven calcium and eNOS activation in endothelial cells.
-models:
-- alias: koo2013_shear_stress_no_production
-  path: model
-  parameters:
-    model_path: data/BIOMD0000000467.xml
-    integration_step: 1.0
-runtime:
-  duration: 600.0
-  communication_step: 10.0
-  initial_inputs: {}
+description: Koo et al. (2013) model of nitric oxide (NO) production downstream of shear-stress-driven calcium and eNOS activation in endothelial cells.
 io:
   inputs:
-  - name: cytosolic_calcium
-    maps_to: koo2013_shear_stress_no_production.cytosolic_calcium
-  - name: integration_step
-    maps_to: koo2013_shear_stress_no_production.integration_step
+  - maps_to: koo2013_shear_stress_no_production.cytosolic_calcium
+    name: cytosolic_calcium
+  - maps_to: koo2013_shear_stress_no_production.integration_step
+    name: integration_step
   outputs:
-  - name: active_eNOS
-    maps_to: koo2013_shear_stress_no_production.active_eNOS
-  - name: nitric_oxide
-    maps_to: koo2013_shear_stress_no_production.nitric_oxide
-  - name: state
-    maps_to: koo2013_shear_stress_no_production.state
-  - name: summary
-    maps_to: koo2013_shear_stress_no_production.summary
-wiring: []
+  - maps_to: koo2013_shear_stress_no_production.active_eNOS
+    name: active_eNOS
+  - maps_to: koo2013_shear_stress_no_production.nitric_oxide
+    name: nitric_oxide
+  - maps_to: koo2013_shear_stress_no_production.state
+    name: state
+  - maps_to: koo2013_shear_stress_no_production.summary
+    name: summary
+models:
+- alias: koo2013_shear_stress_no_production
+  parameters:
+    integration_step: 1
+    model_path: data/BIOMD0000000467.xml
+  path: models/core
+- alias: visualisation
+  path: models/visualisation
+runtime:
+  communication_step: 10
+  duration: 600
+  initial_inputs: {}
+schema_version: '2.0'
+title: Koo2013 Shear-Stress Induced NO Production Lab
+wiring:
+- from: koo2013_shear_stress_no_production.active_eNOS
+  to:
+  - visualisation.koo2013_shear_stress_no_production_active_eNOS
+- from: koo2013_shear_stress_no_production.nitric_oxide
+  to:
+  - visualisation.koo2013_shear_stress_no_production_nitric_oxide
+- from: koo2013_shear_stress_no_production.state
+  to:
+  - visualisation.koo2013_shear_stress_no_production_state
+- from: koo2013_shear_stress_no_production.summary
+  to:
+  - visualisation.koo2013_shear_stress_no_production_summary

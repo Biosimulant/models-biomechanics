@@ -1,32 +1,45 @@
-schema_version: '2.0'
-title: Heldt2002 Orthostatic Stress - Heart Lab
-description: Heldt et al. (2002) cardiac submodel for the orthostatic-stress cardiovascular
-  system, isolating contraction-driven ventricular dynamics.
-models:
-- alias: heldt2002_orthostaticstress_heart
-  path: model
-  parameters:
-    model_path: data/MODEL1006230103.xml
-    integration_step: 0.01
-runtime:
-  duration: 5.0
-  communication_step: 0.5
-  initial_inputs: {}
+description: Heldt et al. (2002) cardiac submodel for the orthostatic-stress cardiovascular system, isolating contraction-driven ventricular dynamics.
 io:
   inputs:
-  - name: diastolic_elastance
-    maps_to: heldt2002_orthostaticstress_heart.diastolic_elastance
-  - name: heart_rate
-    maps_to: heldt2002_orthostaticstress_heart.heart_rate
-  - name: integration_step
-    maps_to: heldt2002_orthostaticstress_heart.integration_step
-  - name: systolic_elastance
-    maps_to: heldt2002_orthostaticstress_heart.systolic_elastance
+  - maps_to: heldt2002_orthostaticstress_heart.diastolic_elastance
+    name: diastolic_elastance
+  - maps_to: heldt2002_orthostaticstress_heart.heart_rate
+    name: heart_rate
+  - maps_to: heldt2002_orthostaticstress_heart.integration_step
+    name: integration_step
+  - maps_to: heldt2002_orthostaticstress_heart.systolic_elastance
+    name: systolic_elastance
   outputs:
-  - name: elastance
-    maps_to: heldt2002_orthostaticstress_heart.elastance
-  - name: state
-    maps_to: heldt2002_orthostaticstress_heart.state
-  - name: summary
-    maps_to: heldt2002_orthostaticstress_heart.summary
-wiring: []
+  - maps_to: heldt2002_orthostaticstress_heart.elastance
+    name: elastance
+  - maps_to: heldt2002_orthostaticstress_heart.state
+    name: state
+  - maps_to: heldt2002_orthostaticstress_heart.summary
+    name: summary
+models:
+- alias: heldt2002_orthostaticstress_heart
+  parameters:
+    integration_step: 0.01
+    model_path: data/MODEL1006230103.xml
+  path: models/core
+- alias: visualisation
+  path: models/visualisation
+runtime:
+  communication_step: 0.5
+  duration: 5
+  initial_inputs: {}
+schema_version: '2.0'
+title: Heldt2002 Orthostatic Stress - Heart Lab
+wiring:
+- from: heldt2002_orthostaticstress_heart.elastance
+  to:
+  - visualisation.heldt2002_orthostaticstress_heart_elastance
+- from: heldt2002_orthostaticstress_heart.state
+  to:
+  - visualisation.heldt2002_orthostaticstress_heart_state
+- from: heldt2002_orthostaticstress_heart.summary
+  to:
+  - visualisation.heldt2002_orthostaticstress_heart_summary
+- from: heldt2002_orthostaticstress_heart.visualisation_aux
+  to:
+  - visualisation.heldt2002_orthostaticstress_heart_visualisation_aux

@@ -1,0 +1,29 @@
+schema_version: "2.0"
+title: "Koo2013 Calcium Influx Visualisation"
+description: "Dedicated presentation model for the Koo2013 calcium influx lab."
+standard: other
+tags:
+  - biomechanics
+  - visualisation
+  - koo2013
+authors:
+  - "Biosimulant Team"
+biosim:
+  entrypoint: "src.biomechanics_visualisation:BiomechanicsVisualisationModel"
+  init_kwargs:
+    integration_step: 10.0
+    lab_title: "Koo2013 Shear-Stress Induced Calcium Influx and eNOS Activation Lab"
+    sources:
+      - alias: koo2013_shear_stress_calcium_influx
+        path: ../core
+        observable_strategy: species
+  communication_step: 10.0
+parameters:
+  - name: integration_step
+    value: 10.0
+    min: 0.0
+    units: "s"
+    description: "Sampling step for the visualisation model."
+io:
+  inputs: []
+  outputs: []

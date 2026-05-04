@@ -1,30 +1,43 @@
-schema_version: '2.0'
-title: Koo2013 Shear-Stress Induced Calcium Influx and eNOS Activation Lab
-description: Koo et al. (2013) model of how laminar shear stress at the endothelial
-  surface drives calcium influx and activates endothelial nitric oxide synthase (eNOS).
-models:
-- alias: koo2013_shear_stress_calcium_influx
-  path: model
-  parameters:
-    model_path: data/BIOMD0000000464.xml
-    integration_step: 1.0
-runtime:
-  duration: 600.0
-  communication_step: 10.0
-  initial_inputs: {}
+description: Koo et al. (2013) model of how laminar shear stress at the endothelial surface drives calcium influx and activates endothelial nitric oxide synthase (eNOS).
 io:
   inputs:
-  - name: integration_step
-    maps_to: koo2013_shear_stress_calcium_influx.integration_step
-  - name: stimulus_intensity
-    maps_to: koo2013_shear_stress_calcium_influx.stimulus_intensity
+  - maps_to: koo2013_shear_stress_calcium_influx.integration_step
+    name: integration_step
+  - maps_to: koo2013_shear_stress_calcium_influx.stimulus_intensity
+    name: stimulus_intensity
   outputs:
-  - name: cytosolic_calcium
-    maps_to: koo2013_shear_stress_calcium_influx.cytosolic_calcium
-  - name: ip3
-    maps_to: koo2013_shear_stress_calcium_influx.ip3
-  - name: state
-    maps_to: koo2013_shear_stress_calcium_influx.state
-  - name: summary
-    maps_to: koo2013_shear_stress_calcium_influx.summary
-wiring: []
+  - maps_to: koo2013_shear_stress_calcium_influx.cytosolic_calcium
+    name: cytosolic_calcium
+  - maps_to: koo2013_shear_stress_calcium_influx.ip3
+    name: ip3
+  - maps_to: koo2013_shear_stress_calcium_influx.state
+    name: state
+  - maps_to: koo2013_shear_stress_calcium_influx.summary
+    name: summary
+models:
+- alias: koo2013_shear_stress_calcium_influx
+  parameters:
+    integration_step: 1
+    model_path: data/BIOMD0000000464.xml
+  path: models/core
+- alias: visualisation
+  path: models/visualisation
+runtime:
+  communication_step: 10
+  duration: 600
+  initial_inputs: {}
+schema_version: '2.0'
+title: Koo2013 Shear-Stress Induced Calcium Influx and eNOS Activation Lab
+wiring:
+- from: koo2013_shear_stress_calcium_influx.cytosolic_calcium
+  to:
+  - visualisation.koo2013_shear_stress_calcium_influx_cytosolic_calcium
+- from: koo2013_shear_stress_calcium_influx.ip3
+  to:
+  - visualisation.koo2013_shear_stress_calcium_influx_ip3
+- from: koo2013_shear_stress_calcium_influx.state
+  to:
+  - visualisation.koo2013_shear_stress_calcium_influx_state
+- from: koo2013_shear_stress_calcium_influx.summary
+  to:
+  - visualisation.koo2013_shear_stress_calcium_influx_summary

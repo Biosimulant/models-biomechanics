@@ -1,7 +1,7 @@
 # models-biomechanics
 
-> Storage-only repo: each former root model now lives in `labs/<slug>/model/` and is wrapped by
-> `labs/<slug>/lab.yaml`. This repo has no repo-level import catalog and no composed labs at the root.
+> Storage-only repo: each curated lab now lives in `labs/<slug>/`, with embedded
+> model packages under `labs/<slug>/models/` and a coordinating `labs/<slug>/lab.yaml`.
 
 Curated collection of **biomechanics** simulation models for the **biosim** platform. This repository contains computational models of mechanical and physical processes in biological systems, including muscle mechanics, fluid dynamics, stress responses, and biomechanical interactions.
 
@@ -9,7 +9,9 @@ Curated collection of **biomechanics** simulation models for the **biosim** plat
 
 ### Models (19 packages)
 
-Each model is a self-contained simulation component with a `model.yaml` manifest.
+Each embedded model package is a self-contained simulation component with a `model.yaml`
+manifest. Curated labs can contain multiple packages, including a dedicated
+`visualisation` model alongside one or more SBML execution wrappers.
 
 **Biomechanics** — mechanical forces, stress responses, and physical processes in biological systems:
 
@@ -37,10 +39,15 @@ Each model is a self-contained simulation component with a `model.yaml` manifest
 
 ## Layout
 
-```
+```text
 models-biomechanics/
-├── models/<model-slug>/     # One model package per folder, each with model.yaml
-├── libs/                    # Shared helper code for curated models
+├── labs/<lab-slug>/
+│   ├── lab.yaml
+│   ├── README.md
+│   └── models/
+│       ├── core/            # SBML execution wrapper
+│       └── visualisation/   # Internal charts and narrative logic
+├── labs-orphan/             # Parked labs not currently packaged as active labs
 ├── templates/model-pack/    # Starter template for new model packs
 ├── scripts/                 # Manifest and entrypoint validation scripts
 ├── docs/                    # Governance documentation
@@ -57,7 +64,8 @@ Every model implements the `biosim.BioModule` interface:
 - **`outputs()`** — declares named output signals the module produces
 - **`advance_window(t)`** — advances the model's internal state to time `t`
 
-Most curated models include Python source under `src/` and are wired together via `lab.yaml` in composed simulations without additional code.
+Most curated model packages include Python source under `src/` and are wired together via
+`lab.yaml` without repo-level shared libraries.
 
 ### Model Standards
 
@@ -89,7 +97,7 @@ pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
 
 ### Create a New Model
 
-1. Copy `templates/model-pack/` to `models/<your-model-slug>/`
+1. Copy `templates/model-pack/` into `labs/<your-lab-slug>/models/<your-model-alias>/`
 2. Edit `model.yaml` with metadata, entrypoint, and pinned dependencies
 3. Implement your module (subclass `biosim.BioModule` or use a built-in pack)
 4. Add biomechanics-specific tags and categorization

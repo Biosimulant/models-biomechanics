@@ -1,6 +1,6 @@
 # Koo2013 Shear-Stress Induced NO Production Lab
 
-This lab wraps the Koo et al. (2013) NO-production submodel from BioModels source `BIOMD0000000467`. The screenshots below were checked against the visible run alias `koo2013_shear_stress_no_production`, which matches this lab and its model package.
+This lab wraps the Koo et al. (2013) NO-production submodel from BioModels source `BIOMD0000000467`. The screenshots below were checked against the visible run alias `koo2013_shear_stress_no_production`, which matches this lab and its model package. The `models/core` package handles SBML execution and numeric outputs, while `models/visualisation` owns internal grouped charts and narrative logic.
 
 Use this lab for the downstream half of the endothelial shear-stress pathway: cytosolic calcium is treated as an external input, then the model follows eNOS activation and nitric oxide production.
 
@@ -19,10 +19,11 @@ The summary view highlights the nitric oxide output. In the captured run, NO ris
 | Path | Purpose |
 |---|---|
 | `lab.yaml` | Lab title, IO wiring, runtime defaults, and canvas metadata. |
-| `model/model.yaml` | Model package metadata, parameters, inputs, outputs, and units. |
-| `model/src/koo2013_shear_stress_no_production.py` | Tellurium-backed wrapper and visualization definitions. |
-| `model/data/BIOMD0000000467.xml` | Curated SBML model file from BioModels. |
-| `model/tests/` | Smoke coverage for model construction, stepping, and outputs. |
+| `models/core/model.yaml` | Core SBML execution package metadata, parameters, inputs, outputs, and units. |
+| `models/core/src/koo2013_shear_stress_no_production.py` | Tellurium-backed SBML execution wrapper. |
+| `models/core/data/BIOMD0000000467.xml` | Curated SBML model file from BioModels. |
+| `models/visualisation/` | Internal presentation model for charts and narrative logic. |
+| `models/*/tests/` | Smoke coverage for core execution and visualisation behavior. |
 
 ## Inputs and Outputs
 

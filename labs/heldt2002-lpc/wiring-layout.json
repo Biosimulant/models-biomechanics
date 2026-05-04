@@ -4,8 +4,15 @@
     {
       "id": "heldt2002_orthostaticstress_lpc",
       "position": {
-        "x": 360,
+        "x": 0,
         "y": 0
+      }
+    },
+    {
+      "id": "visualisation",
+      "position": {
+        "x": 484.8690476190476,
+        "y": 413.3968253968254
       }
     }
   ]

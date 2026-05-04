@@ -4,8 +4,15 @@
     {
       "id": "heldt2002_orthostaticstress_heart",
       "position": {
-        "x": 360,
+        "x": 0,
         "y": 0
+      }
+    },
+    {
+      "id": "visualisation",
+      "position": {
+        "x": 457.5119047619048,
+        "y": 373.8809523809524
       }
     }
   ]

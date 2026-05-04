@@ -1,0 +1,32 @@
+schema_version: "2.0"
+title: "Koo2013 Shear-to-NO Visualisation"
+description: "Dedicated presentation model for the composed Koo2013 shear-to-NO lab."
+standard: other
+tags:
+  - biomechanics
+  - visualisation
+  - koo2013
+authors:
+  - "Biosimulant Team"
+biosim:
+  entrypoint: "src.biomechanics_visualisation:BiomechanicsVisualisationModel"
+  init_kwargs:
+    integration_step: 10.0
+    lab_title: "Koo2013 Shear-to-NO Composed Pathway"
+    sources:
+      - alias: calcium_influx
+        path: ../calcium-influx
+        observable_strategy: species
+      - alias: no_production
+        path: ../no-production
+        observable_strategy: species
+  communication_step: 10.0
+parameters:
+  - name: integration_step
+    value: 10.0
+    min: 0.0
+    units: "s"
+    description: "Sampling step for the visualisation model."
+io:
+  inputs: []
+  outputs: []
