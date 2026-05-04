@@ -10,7 +10,23 @@ This is the canonical composition use case the boundary-condition design enables
 
 ## What you'll see
 
-A canvas with two nodes — calcium influx (left), NO production (right) — connected by a single wire from the upstream calcium output to the downstream calcium input. Setting `stimulus_intensity` (the IP3 production rate constant in the upstream submodel) drives the entire chain through to NO production.
+A canvas with three nodes: `calcium_influx`, `no_production`, and `visualisation`. The biological wiring is still the two-step pathway — upstream calcium drives downstream NO production — while the third node consumes both submodel states and summaries so the Results panel can render pathway-level charts. Setting `stimulus_intensity` (the IP3 production rate constant in the upstream submodel) drives the entire chain through to NO production.
+
+The screenshots below were checked against the visible lab title `Koo2013 Shear-to-NO Composed Pathway` and the canvas model list. They show the expected composed-lab shape: `calcium_influx` feeding `no_production`, with both submodels also feeding `visualisation`.
+
+## Results preview
+
+The default run spans 600 s with a 10 s communication step. The first captured view shows the full composition canvas beside the pathway-level visualisation model. The mechanical-input panel tracks the step timer and shear-stress stimulus surrogate, while the calcium subsystem panel shows the upstream response that is wired into the downstream NO-production model.
+
+![Koo2013 shear-to-NO composed inputs and calcium results](assets/koo2013-shear-to-no-inputs-calcium-results.png)
+
+The middle view focuses on the downstream NO-production response to the composed calcium signal. It shows calcium/calmodulin species, the PI3K/AKT signalling panel, and the eNOS activation chain produced by the `no_production` submodel.
+
+![Koo2013 shear-to-NO calcium, PI3K, and eNOS results](assets/koo2013-shear-to-no-calcium-pi3k-enos-results.png)
+
+The final view shows nitric oxide accumulation and the plain-language run summary. In the captured run, the visualisation reports 16 observables for the NO-production submodel, a 590 s tracked interval, nitric oxide as the observable that changed the most, and Hsp90 as the largest peak.
+
+![Koo2013 shear-to-NO nitric oxide and summary results](assets/koo2013-shear-to-no-no-summary-results.png)
 
 ## Inputs
 
@@ -46,27 +62,32 @@ The Koo2013 series ships three SBML files at BioModels: calcium-influx (Model 1)
 
 ## Layout
 
-The lab is self-contained. The two submodel directories are bundled inside `model/`:
+The lab is self-contained. The two SBML submodel directories and the charting model are bundled inside `models/`:
 
 ```
 koo2013-shear-to-no/
 ├── lab.yaml                         # composition + wiring
 ├── wiring-layout.json               # canvas placement
 ├── README.md                        # this file
-└── model/
-    ├── calcium_influx/              # full copy of koo2013-calcium-influx/model
+├── assets/                          # captured Biosimulant run screenshots
+└── models/
+    ├── calcium-influx/              # full copy of koo2013-calcium-influx/model
     │   ├── model.yaml
     │   ├── data/BIOMD0000000464.xml
     │   ├── src/...
     │   └── tests/...
-    └── no_production/               # full copy of koo2013-no-production/model
+    ├── no-production/               # full copy of koo2013-no-production/model
+    │   ├── model.yaml
+    │   ├── data/BIOMD0000000467.xml
+    │   ├── src/...
+    │   └── tests/...
+    └── visualisation/               # pathway-level charting and summary model
         ├── model.yaml
-        ├── data/BIOMD0000000467.xml
         ├── src/...
-        └── tests/...
+        └── README.md
 ```
 
-The `model/calcium_influx` and `model/no_production` directories are full byte-for-byte copies of the matching single-model labs at the time this composed lab was created. They are intentionally self-contained so the lab packs cleanly via `biosim.pack` (which rejects `..` traversal in embedded paths). If you change one of the source labs, you'll need to refresh the corresponding subdirectory here.
+The `models/calcium-influx` and `models/no-production` directories are full copies of the matching single-model labs at the time this composed lab was created. The `models/visualisation` directory is local to this composed lab and owns the pathway-level plots and What Happened summary. The model directories are intentionally self-contained so the lab packs cleanly via `biosim.pack` (which rejects `..` traversal in embedded paths). If you change one of the source labs, you'll need to refresh the corresponding subdirectory here.
 
 ## Notes
 
