@@ -1,18 +1,26 @@
 {
+  "edges": [],
   "nodes": [
     {
       "id": "calcium_influx",
-      "position": { "x": 200, "y": 0 }
+      "position": {
+        "x": 0,
+        "y": 0
+      }
     },
     {
       "id": "no_production",
-      "position": { "x": 600, "y": 0 }
-    }
-  ],
-  "edges": [
+      "position": {
+        "x": 364,
+        "y": -158.5
+      }
+    },
     {
-      "from": "calcium_influx.cytosolic_calcium",
-      "to": "no_production.cytosolic_calcium"
+      "id": "visualisation",
+      "position": {
+        "x": 1002,
+        "y": 396
+      }
     }
   ]
 }

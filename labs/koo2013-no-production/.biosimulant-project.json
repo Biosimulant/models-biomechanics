@@ -1,9 +1,9 @@
 {
   "schema_version": "1",
-  "local_id": "9ddc8d76-f54d-4e1e-bc59-937bd7bf1f79",
+  "local_id": "b9e450fb-bfff-44ba-8ce6-891daa79f2c8",
   "kind": "lab",
   "source": "local",
   "hub_id": "10d6406a-9f86-4bfe-8c4a-88f7744ed55a",
-  "created_at": "2026-05-04 07:13:35",
+  "created_at": "2026-05-04 16:59:39",
   "package_name": "local/Koo2013_Shear-Stress_Induced_NO_Production_Lab"
 }

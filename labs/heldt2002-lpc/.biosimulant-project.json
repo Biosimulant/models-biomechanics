@@ -1,9 +1,9 @@
 {
   "schema_version": "1",
-  "local_id": "c4176360-2588-4f51-836c-196d59416ea9",
+  "local_id": "18911cb5-46e2-4b52-983f-fc7ab9d916d9",
   "kind": "lab",
   "source": "local",
   "hub_id": "231660e2-a755-4c52-98db-5927a26a400a",
-  "created_at": "2026-05-04 07:01:42",
+  "created_at": "2026-05-04 16:54:08",
   "package_name": "local/Heldt2002_Orthostatic_Stress_-_Lumped_Parameter_Circulation_Lab"
 }

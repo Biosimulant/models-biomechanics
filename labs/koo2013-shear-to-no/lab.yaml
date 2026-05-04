@@ -1,59 +1,59 @@
-schema_version: "2.0"
-title: "Koo2013 Shear-to-NO Composed Pathway"
-description: "End-to-end shear-stress driven mechanotransduction. Composes the calcium-influx submodel with the NO-production submodel by wiring the cytosolic calcium output of the first into the cytosolic calcium input of the second. Single experimental knob: stimulus_intensity."
-models:
-  - alias: calcium_influx
-    path: models/calcium-influx
-  - alias: no_production
-    path: models/no-production
-  - alias: visualisation
-    path: models/visualisation
-runtime:
-  duration: 600.0
-  communication_step: 10.0
-  initial_inputs: {}
+description: 'End-to-end shear-stress driven mechanotransduction. Composes the calcium-influx submodel with the NO-production submodel by wiring the cytosolic calcium output of the first into the cytosolic calcium input of the second. Single experimental knob: stimulus_intensity.'
 io:
   inputs:
-    - name: stimulus_intensity
-      maps_to: calcium_influx.stimulus_intensity
-    - name: integration_step
-      maps_to: calcium_influx.integration_step
+  - maps_to: calcium_influx.stimulus_intensity
+    name: stimulus_intensity
+  - maps_to: calcium_influx.integration_step
+    name: integration_step
   outputs:
-    - name: cytosolic_calcium
-      maps_to: calcium_influx.cytosolic_calcium
-    - name: ip3
-      maps_to: calcium_influx.ip3
-    - name: active_eNOS
-      maps_to: no_production.active_eNOS
-    - name: nitric_oxide
-      maps_to: no_production.nitric_oxide
-    - name: calcium_influx_state
-      maps_to: calcium_influx.state
-    - name: no_production_state
-      maps_to: no_production.state
+  - maps_to: calcium_influx.cytosolic_calcium
+    name: cytosolic_calcium
+  - maps_to: calcium_influx.ip3
+    name: ip3
+  - maps_to: no_production.active_eNOS
+    name: active_eNOS
+  - maps_to: no_production.nitric_oxide
+    name: nitric_oxide
+  - maps_to: calcium_influx.state
+    name: calcium_influx_state
+  - maps_to: no_production.state
+    name: no_production_state
+models:
+- alias: calcium_influx
+  path: models/calcium-influx
+- alias: no_production
+  path: models/no-production
+- alias: visualisation
+  path: models/visualisation
+runtime:
+  communication_step: 10
+  duration: 600
+  initial_inputs: {}
+schema_version: '2.0'
+title: Koo2013 Shear-to-NO Composed Pathway
 wiring:
-  - from: calcium_influx.cytosolic_calcium
-    to:
-      - no_production.cytosolic_calcium
-      - visualisation.calcium_influx_cytosolic_calcium
-  - from: calcium_influx.ip3
-    to:
-      - visualisation.calcium_influx_ip3
-  - from: no_production.active_eNOS
-    to:
-      - visualisation.no_production_active_eNOS
-  - from: no_production.nitric_oxide
-    to:
-      - visualisation.no_production_nitric_oxide
-  - from: calcium_influx.state
-    to:
-      - visualisation.calcium_influx_state
-  - from: calcium_influx.summary
-    to:
-      - visualisation.calcium_influx_summary
-  - from: no_production.state
-    to:
-      - visualisation.no_production_state
-  - from: no_production.summary
-    to:
-      - visualisation.no_production_summary
+- from: calcium_influx.cytosolic_calcium
+  to:
+  - no_production.cytosolic_calcium
+  - visualisation.calcium_influx_cytosolic_calcium
+- from: calcium_influx.ip3
+  to:
+  - visualisation.calcium_influx_ip3
+- from: no_production.active_eNOS
+  to:
+  - visualisation.no_production_active_eNOS
+- from: no_production.nitric_oxide
+  to:
+  - visualisation.no_production_nitric_oxide
+- from: calcium_influx.state
+  to:
+  - visualisation.calcium_influx_state
+- from: calcium_influx.summary
+  to:
+  - visualisation.calcium_influx_summary
+- from: no_production.state
+  to:
+  - visualisation.no_production_state
+- from: no_production.summary
+  to:
+  - visualisation.no_production_summary
