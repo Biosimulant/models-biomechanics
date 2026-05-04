@@ -15,7 +15,6 @@ biosim:
     lab_title: "Koo2013 Shear-Stress Induced NO Production Lab"
     sources:
       - alias: koo2013_shear_stress_no_production
-        path: ../core
         observable_strategy: species
   communication_step: 10.0
 parameters:

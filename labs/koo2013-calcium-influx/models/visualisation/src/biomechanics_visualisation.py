@@ -407,7 +407,6 @@ class BiomechanicsVisualisationModel(BioModule):
     ) -> None:
         self.lab_title = str(lab_title)
         self.integration_step = float(integration_step)
-        self._model_root = Path(__file__).resolve().parent.parent
         self._inputs: dict[str, BioSignal] = {}
         self._time = 0.0
         self._history: dict[str, list[dict[str, Any]]] = {}
@@ -419,7 +418,10 @@ class BiomechanicsVisualisationModel(BioModule):
         loaded: dict[str, dict[str, Any]] = {}
         for source in sources:
             alias = str(source["alias"])
-            model_dir = (self._model_root / str(source["path"])).resolve()
+            resolved_path = source.get("resolved_path")
+            if not isinstance(resolved_path, str) or not resolved_path.strip():
+                raise ValueError(f"Visualisation source '{alias}' is missing resolved_path")
+            model_dir = Path(resolved_path).expanduser().resolve()
             manifest = _load_yaml(model_dir / "model.yaml")
             bsim = manifest.get("biosim") or {}
             factory = _load_entrypoint(model_dir, str(bsim["entrypoint"]))

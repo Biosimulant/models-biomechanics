@@ -39,9 +39,22 @@ def _load_wrapper():
     return module
 
 
+def _with_resolved_source_paths(init_kwargs: dict[str, object]) -> dict[str, object]:
+    lab_dir = _MODEL_DIR.parent.parent
+    lab_manifest = yaml.safe_load((lab_dir / "lab.yaml").read_text())
+    model_paths = {
+        str(entry["alias"]): str((lab_dir / str(entry["path"])).resolve())
+        for entry in lab_manifest["models"]
+    }
+    for source in init_kwargs.get("sources", []):
+        source["resolved_path"] = model_paths[str(source["alias"])]
+    return init_kwargs
+
+
 def _load_model():
     manifest = yaml.safe_load((_MODEL_DIR / "model.yaml").read_text())
     init_kwargs = dict(manifest["biosim"]["init_kwargs"])
+    init_kwargs = _with_resolved_source_paths(init_kwargs)
     module_cls = _load_wrapper().BiomechanicsVisualisationModel
     return module_cls(**init_kwargs), float(manifest["biosim"]["communication_step"])
 

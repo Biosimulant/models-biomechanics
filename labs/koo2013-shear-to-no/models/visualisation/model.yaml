@@ -15,10 +15,8 @@ biosim:
     lab_title: "Koo2013 Shear-to-NO Composed Pathway"
     sources:
       - alias: calcium_influx
-        path: ../calcium-influx
         observable_strategy: species
       - alias: no_production
-        path: ../no-production
         observable_strategy: species
   communication_step: 10.0
 parameters:

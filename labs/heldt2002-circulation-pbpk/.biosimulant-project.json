@@ -1,9 +1,9 @@
 {
   "schema_version": "1",
-  "local_id": "a07c559d-d7ce-487c-b045-68e16ec2c422",
+  "local_id": "64f4cd01-9781-4505-b67d-0834ceb305dd",
   "kind": "lab",
   "source": "local",
   "hub_id": "c52b5162-0fd7-4d06-9834-1ccaccad6fbc",
-  "created_at": "2026-05-04 06:14:40",
+  "created_at": "2026-05-04 16:40:24",
   "package_name": "local/Heldt2002_Orthostatic_Stress_-_Circulation_PBPK_Lab"
 }

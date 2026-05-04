@@ -15,7 +15,6 @@ biosim:
     lab_title: "Heldt2002 Orthostatic Stress - Lumped Parameter Circulation Lab"
     sources:
       - alias: heldt2002_orthostaticstress_lpc
-        path: ../core
         observable_strategy: rateRule
         phase_portrait:
           title: "LV pressure-volume loop"

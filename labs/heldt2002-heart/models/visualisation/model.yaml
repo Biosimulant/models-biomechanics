@@ -15,7 +15,6 @@ biosim:
     lab_title: "Heldt2002 Orthostatic Stress - Heart Lab"
     sources:
       - alias: heldt2002_orthostaticstress_heart
-        path: ../core
         observable_strategy: rateRule
         phase_portrait:
           title: "LV elastance phase portrait"
