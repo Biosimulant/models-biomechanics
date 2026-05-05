@@ -42,18 +42,10 @@ This lab wraps Model 4 of the Koo2013 series. With the bundled defaults the simu
         | `state` | Latest value of every tracked observable (species variables). |
         | `summary` | Final, peak, and minimum value per observable plus simulated duration. |
 
-        ## Running with the Bundled Defaults
-
-        ```bash
-        python3 examples/run_example.py koo2013_shear_stress_no_production
-        ```
-
-        The example configuration lives at `examples/koo2013_shear_stress_no_production/config.yaml`.
-
         ## Running in Biosimulant Desktop
 
         ```bash
-        biosimulant labs import /Volumes/dem-ssd/imp/projects/Nitoons/Biosimulant/models/models-biomechanics/labs/koo2013-no-production
+        biosimulant labs import labs/koo2013-no-production
         ```
 
         ## Notes

@@ -42,18 +42,10 @@ This lab wraps Model 1 of the Koo2013 series, the simplest formulation that link
         | `state` | Latest value of every tracked observable (species variables). |
         | `summary` | Final, peak, and minimum value per observable plus simulated duration. |
 
-        ## Running with the Bundled Defaults
-
-        ```bash
-        python3 examples/run_example.py koo2013_shear_stress_calcium_influx
-        ```
-
-        The example configuration lives at `examples/koo2013_shear_stress_calcium_influx/config.yaml`.
-
         ## Running in Biosimulant Desktop
 
         ```bash
-        biosimulant labs import /Volumes/dem-ssd/imp/projects/Nitoons/Biosimulant/models/models-biomechanics/labs/koo2013-calcium-influx
+        biosimulant labs import labs/koo2013-calcium-influx
         ```
 
         ## Notes
