@@ -92,7 +92,7 @@ Individual models can be integrated into larger composed simulations (spaces) by
 ### Install biosim
 
 ```bash
-pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
+pip install "biosim==0.0.7"
 ```
 
 ### Create a New Model
