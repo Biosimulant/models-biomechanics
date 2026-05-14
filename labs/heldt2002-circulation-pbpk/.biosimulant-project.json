@@ -5,5 +5,7 @@
   "source": "local",
   "hub_id": "c52b5162-0fd7-4d06-9834-1ccaccad6fbc",
   "created_at": "2026-05-04 16:40:24",
-  "package_name": "local/Heldt2002_Orthostatic_Stress_-_Circulation_PBPK_Lab"
+  "last_synced_at": "2026-05-14T03:22:51.845676+00:00",
+  "hub_manifest_hash": "23e54150c6b7e4ffe81bf8dadeb1c25b1c146ff3162ca7d44e38b387b695b7ed",
+  "package_name": "heldt2002-orthostatic-stress---circulation-pbpk-lab"
 }

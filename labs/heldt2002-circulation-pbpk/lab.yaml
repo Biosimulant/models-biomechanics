@@ -9,6 +9,8 @@ io:
     name: integration_step
   - maps_to: heldt2002_orthostaticstress_circpbpk.peripheral_resistance_scale
     name: peripheral_resistance_scale
+  - maps_to: ''
+    name: ''
   outputs:
   - maps_to: heldt2002_orthostaticstress_circpbpk.aortic_flow
     name: aortic_flow
