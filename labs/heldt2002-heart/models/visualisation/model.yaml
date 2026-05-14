@@ -27,6 +27,10 @@ biosim:
           y_unit: "mmHg/mL"
           series: "elastance"
   communication_step: 0.5
+runtime:
+  dependencies:
+    packages:
+      - PyYAML>=6.0
 parameters:
   - name: integration_step
     value: 0.5

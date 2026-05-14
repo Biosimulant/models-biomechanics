@@ -5,5 +5,7 @@
   "source": "local",
   "hub_id": "55caf077-6dd4-4b01-abc3-df963aa4409d",
   "created_at": "2026-05-04 16:50:43",
-  "package_name": "local/Heldt2002_Orthostatic_Stress_-_Heart_Lab"
+  "last_synced_at": "2026-05-14T11:54:40.685059+00:00",
+  "hub_manifest_hash": "ceacf9077075ecec6844908ec0b71b7539d85fea8f2291994a320b173eb12afb",
+  "package_name": "heldt2002-orthostatic-stress---heart-lab"
 }

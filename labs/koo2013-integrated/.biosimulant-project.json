@@ -5,5 +5,7 @@
   "source": "local",
   "hub_id": "2c5baf8e-8ac4-41fb-853e-645ba385192d",
   "created_at": "2026-05-04 16:58:03",
-  "package_name": "local/Koo2013_Integrated_Shear-Stress_Induced_NO_Production_Lab"
+  "last_synced_at": "2026-05-14T11:22:47.219632+00:00",
+  "hub_manifest_hash": "3dde875a7e796b01887d186a7082993381555d70f4d0c16dea975c043cde886c",
+  "package_name": "koo2013-integrated-shear-stress-induced-no-production-lab"
 }

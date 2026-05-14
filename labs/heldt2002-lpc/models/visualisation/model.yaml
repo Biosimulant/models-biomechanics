@@ -27,6 +27,10 @@ biosim:
           y_unit: "mmHg"
           series: "LV cycle"
   communication_step: 1.0
+runtime:
+  dependencies:
+    packages:
+      - PyYAML>=6.0
 parameters:
   - name: integration_step
     value: 1.0

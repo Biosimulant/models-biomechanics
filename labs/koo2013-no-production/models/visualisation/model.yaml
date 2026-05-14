@@ -17,6 +17,10 @@ biosim:
       - alias: koo2013_shear_stress_no_production
         observable_strategy: species
   communication_step: 10.0
+runtime:
+  dependencies:
+    packages:
+      - PyYAML>=6.0
 parameters:
   - name: integration_step
     value: 10.0

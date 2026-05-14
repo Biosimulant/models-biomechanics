@@ -5,5 +5,7 @@
   "source": "local",
   "hub_id": "9b7ad668-dcb7-4175-b9ca-eacf9c22373a",
   "created_at": "2026-05-04 17:00:49",
-  "package_name": "local/Koo2013_Shear-to-NO_Composed_Pathway"
+  "last_synced_at": "2026-05-14T11:24:27.356463+00:00",
+  "hub_manifest_hash": "5f35ba421ad766ee59d41d59baeaa627f897d7699a5f5408d1b4a2f280b86d5c",
+  "package_name": "koo2013-shear-to-no-composed-pathway"
 }
