@@ -27,6 +27,8 @@ runtime:
   duration: 600
   initial_inputs: {}
 schema_version: '2.0'
+package: koo2013-no-production
+version: 1.0.0
 title: Koo2013 Shear-Stress Induced NO Production Lab
 wiring:
 - from: koo2013_shear_stress_no_production.active_eNOS

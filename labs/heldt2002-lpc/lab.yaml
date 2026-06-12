@@ -29,6 +29,8 @@ runtime:
   duration: 60
   initial_inputs: {}
 schema_version: '2.0'
+package: heldt2002-lpc
+version: 1.0.0
 title: Heldt2002 Orthostatic Stress - Lumped Parameter Circulation Lab
 wiring:
 - from: heldt2002_orthostaticstress_lpc.cardiac_output

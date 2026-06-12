@@ -20,7 +20,7 @@ biosim:
 runtime:
   dependencies:
     packages:
-      - PyYAML>=6.0
+      - PyYAML==6.0.3
 parameters:
   - name: integration_step
     value: 10.0

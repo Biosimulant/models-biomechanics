@@ -1,0 +1,46 @@
+schema_version: "1"
+namespace: demi
+default_visibility: public
+packages:
+  - id: heldt2002-circulation-pbpk-lab
+    package: heldt2002-circulation-pbpk
+    version: 1.0.0
+    type: lab
+    path: labs/heldt2002-circulation-pbpk
+    visibility: public
+  - id: heldt2002-heart-lab
+    package: heldt2002-heart
+    version: 1.0.0
+    type: lab
+    path: labs/heldt2002-heart
+    visibility: public
+  - id: heldt2002-lpc-lab
+    package: heldt2002-lpc
+    version: 1.0.0
+    type: lab
+    path: labs/heldt2002-lpc
+    visibility: public
+  - id: koo2013-calcium-influx-lab
+    package: koo2013-calcium-influx
+    version: 1.0.0
+    type: lab
+    path: labs/koo2013-calcium-influx
+    visibility: public
+  - id: koo2013-integrated-lab
+    package: koo2013-integrated
+    version: 1.0.0
+    type: lab
+    path: labs/koo2013-integrated
+    visibility: public
+  - id: koo2013-no-production-lab
+    package: koo2013-no-production
+    version: 1.0.0
+    type: lab
+    path: labs/koo2013-no-production
+    visibility: public
+  - id: koo2013-shear-to-no-lab
+    package: koo2013-shear-to-no
+    version: 1.0.0
+    type: lab
+    path: labs/koo2013-shear-to-no
+    visibility: public

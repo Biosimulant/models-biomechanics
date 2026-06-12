@@ -30,6 +30,8 @@ runtime:
   duration: 600
   initial_inputs: {}
 schema_version: '2.0'
+package: koo2013-shear-to-no
+version: 1.0.0
 title: Koo2013 Shear-to-NO Composed Pathway
 wiring:
 - from: calcium_influx.cytosolic_calcium

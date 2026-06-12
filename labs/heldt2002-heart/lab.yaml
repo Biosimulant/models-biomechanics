@@ -29,6 +29,8 @@ runtime:
   duration: 5
   initial_inputs: {}
 schema_version: '2.0'
+package: heldt2002-heart
+version: 1.0.0
 title: Heldt2002 Orthostatic Stress - Heart Lab
 wiring:
 - from: heldt2002_orthostaticstress_heart.elastance

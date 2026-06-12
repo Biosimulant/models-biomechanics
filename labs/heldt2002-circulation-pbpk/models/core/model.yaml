@@ -35,7 +35,7 @@ runtime:
   dependencies:
     packages:
     - tellurium==2.2.11.2
-    - PyYAML>=6.0
+    - PyYAML==6.0.3
 parameters:
 - name: model_path
   value: data/MODEL1006230084.xml
